@@ -2,9 +2,12 @@
 
 
 ## Membre du projet 
-Anaïs VANACKER
+Anaïs VANACKER 
+
 Bertille PINCHON
+
 Louis BORTOLOTTI
+
 Thibault DESPREZ
 
 
