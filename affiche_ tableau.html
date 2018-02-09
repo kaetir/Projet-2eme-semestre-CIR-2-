@@ -18,6 +18,10 @@
 	<table id="mainTable">
 		
 	</table>
+	<br/><br/>
+	<table id="SecondTable">
+		
+	</table>
 </div>
 
 
@@ -25,6 +29,16 @@
 <script type="text/javascript">
 	for(let ligne of Tab){
 		let curentLigne = document.getElementById("mainTable").appendChild(document.createElement("tr"));
+		for(let column of ligne){
+			curentLigne.appendChild(document.createElement("td"));
+			curentLigne.lastChild.innerHTML = column;
+		}
+	}
+
+
+
+	for(let ligne of Tab2){
+		let curentLigne = document.getElementById("SecondTable").appendChild(document.createElement("tr"));
 		for(let column of ligne){
 			curentLigne.appendChild(document.createElement("td"));
 			curentLigne.lastChild.innerHTML = column;
