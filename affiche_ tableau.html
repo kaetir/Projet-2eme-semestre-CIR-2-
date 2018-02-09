@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>affiche tab</title>
+	<script type="text/javascript" src="tabFile.js"></script>
+	<style type="text/css">
+		table *{
+			border: solid black 1px;
+			border-collapse: collapse;
+		}
+		table{
+			border-collapse: collapse;
+		}
+	</style>
+</head>
+<body>
+<div id="main">
+	<table id="mainTable">
+		
+	</table>
+</div>
+
+
+
+<script type="text/javascript">
+	for(let ligne of Tab){
+		let curentLigne = document.getElementById("mainTable").appendChild(document.createElement("tr"));
+		for(let column of ligne){
+			curentLigne.appendChild(document.createElement("td"));
+			curentLigne.lastChild.innerHTML = column;
+		}
+	}
+
+
+</script>
+
+
+</body>
+</html>
