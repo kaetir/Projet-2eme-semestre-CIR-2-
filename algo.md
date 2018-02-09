@@ -18,4 +18,15 @@ for (n of nombre de tours)//Nombre de tours réalisés.
 
 ```
 
- 
+# Classe personne
+
+```javascript
+class personne {
+  constructor(etat)
+  {
+    this.classe = etat;
+  }
+
+  
+}
+```
