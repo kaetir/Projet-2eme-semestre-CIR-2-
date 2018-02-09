@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>affiche tab</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
+	<script type="text/javascript" src="tabFile.js"></script>
+	
+</head>
+<body class="w3-container w3-padding w3-margin">
+	<div id="main" class="w3-container w3-card">
+		<div class="w3-container w3-padding">
+			<table id="mainTable"  class="w3-table-all w3-hoverable w3-border"></table>
+		</div>
+
+		<br/><br/>
+
+		<div class="w3-container w3-padding">
+			<table id="SecondTable" class="w3-table-all w3-hoverable w3-border"></table>
+		</div>
+
+
+	</div>
+
+
+
+	<script type="text/javascript">
+		var tabAffiche= function(tableau, div){
+			for(let ligne in tableau){
+				let curentLigne = document.getElementById(div).appendChild(document.createElement("tr"));
+				if(ligne == 0){
+					curentLigne.classList.add('w3-red');
+				}
+				for(let column of tableau[ligne]){
+					curentLigne.appendChild(document.createElement("td"));
+					curentLigne.lastChild.innerHTML = column;
+				}
+			}
+		}
+
+		tabAffiche(Tab, "mainTable");
+		tabAffiche(Tab2, "SecondTable");
+
+
+
+
+	</script>
+
+
+</body>
+</html>

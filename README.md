@@ -13,7 +13,7 @@ Thibault DESPREZ
 ## Le bien être au travail
 
 ### Inspiration
-[the évolution of trust](http://ayowel.github.io/trust/)
+[the evolution of trust](http://ayowel.github.io/trust/)
 
 #### Idées a faire passer
 - savoir pardonner une erreur
