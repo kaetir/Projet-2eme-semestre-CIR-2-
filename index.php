@@ -24,6 +24,11 @@
 </head>
 <body>
 	<div class="w3-container w3-margin-top " >
+		<?php 
+		include "README.html";
+		?>
+	</div>
+	<div class="w3-container w3-margin-top " >
 		<ul class="w3-container w3-ul w3-card">
 			<?php 
 			$dir = scandir(".");
@@ -38,11 +43,6 @@
 			}
 			?>
 		</ul>
-	</div>
-	<div class="w3-container w3-margin-top " >
-		<?php 
-		include "README.html";
-		?>
 	</div>
 
 
