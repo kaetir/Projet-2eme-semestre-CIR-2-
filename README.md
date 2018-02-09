@@ -13,7 +13,7 @@ Thibault DESPREZ
 ## Le bien être au travail
 
 ### Inspiration
-[the évolution of trust](http://ayowel.github.io/trust/)
+[The Evolution of trust](http://ayowel.github.io/trust/)
 
 #### Idées a faire passer
 - savoir pardonner une erreur
@@ -62,6 +62,16 @@ Thibault DESPREZ
 - le peureux --> s'attend toujours au pire, suit la majorité et n'exprime pas son avis
 
 
+## Tableau d'état final
+
+### Mode ARCADE à 4 joueurs
+|	|BOSSEUR|SUCEPTIBLE|GAFFEUR|MANIPULATEUR|
+|APRÈS TRICHE_1|COOP|SABOTAGE|COOP|COOP|
+|APRÈS COOP_1|COOP|COOP|COOP|SABPTAGE|
+|APRÈS TRICHE_2|COOP|SABOTAGE|COOP|SABOTAGE|
+|APRÈS COOP_2|COOP|COOP|COOP|COOP|
+|APRÈS TRICHE_3|COOP|SABOTAGE|COOP|SABOTAGE|
+|APRÈS COOP_3|COOP|COOP|COOP|COOP|
 
 
 
