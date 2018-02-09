@@ -722,8 +722,18 @@ pre {
   border-color: #4078c0;
 }
 </style><title>algo</title></head><body><article class="markdown-body"><h1>
-<a id="user-content-algo-de-parcourt" class="anchor" href="#algo-de-parcourt" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Algo de parcourt</h1>
-<div class="highlight highlight-source-js"><pre><span class="pl-k">for</span> (i<span class="pl-k">=</span><span class="pl-c1">0</span>;i<span class="pl-k">&lt;</span>n;i<span class="pl-k">++</span>)
+<a id="user-content-algo-de-parcour" class="anchor" href="#algo-de-parcour" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Algo de parcour</h1>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">for</span> (n <span class="pl-k">of</span> nombre de tours)<span class="pl-c"><span class="pl-c">//</span>Nombre de tours réalisés.</span>
+{ 
+	<span class="pl-k">for</span>(Personnage1 <span class="pl-k">of</span> equipe)<span class="pl-c"><span class="pl-c">//</span>Pour tous les personnages de l'équipe</span>
+	{ 
+		<span class="pl-k">for</span>(Personnage2 <span class="pl-k">of</span> equipe<span class="pl-k">-</span><span class="pl-c1">1</span>)<span class="pl-c"><span class="pl-c">//</span>Chaque personnage effectue toutes les relations possibles avec les autres membres de l'équipe</span>
+		{
+			<span class="pl-smi">Personnage1</span>.<span class="pl-en">fonction</span>(Personnage2);
+		}
+	}
+
+}
 
 
 
