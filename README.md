@@ -30,13 +30,13 @@ Thibault DESPREZ
 - productivité de l'équipe par le biais de gain de "points d'action" venant des joueurs
 
 ##### Liste des personnages du jeu:
-- le bosseur --> travail tout le temps, on peu tcompter sur lui
+- le bosseur --> travail tout le temps, on peut compter sur lui
 - le suceptible --> bosse mais s'il rencontre un problème, il sabote la relation
 - le gaffeur --> maladroit mais bienveillant
-- le manipulateur --> teste des collègues pour en tirer parti
+- le manipulateur --> teste des collègues pour en tirer partie
 - le jem'enfoutiste --> ne fait rien et se fout de tout
 - le random --> aléatoire et imprévisible
-- le leader --> travaille beaucoup, esprit de compétition booste ses collègues, mais sang chaud
+- le leader --> travaille beaucoup, esprit de compétition, booste ses collègues, mais sang chaud
 - le peureux --> s'attend toujours au pire, suit la majorité et n'exprime pas son avis
 
 #### Fin du jeu 
@@ -46,13 +46,13 @@ Thibault DESPREZ
 #### Modes
 
 ##### Arcade 2 - 3 minutes
-- le bosseur --> travail tout le temps, on peu tcompter sur lui
+- le bosseur --> travail tout le temps, on peut compter sur lui
 - le suceptible --> bosse mais s'il rencontre un problème, il sabote la relation
 - le gaffeur --> maladroit mais bienveillant
 - le manipulateur --> teste des collègues pour en tirer parti
  
 ##### Story 10 minutes
-- le bosseur --> travail tout le temps, on peu tcompter sur lui
+- le bosseur --> travail tout le temps, on peut compter sur lui
 - le suceptible --> bosse mais s'il rencontre un problème, il sabote la relation
 - le gaffeur --> maladroit mais bienveillant
 - le manipulateur --> teste des collègues pour en tirer parti
