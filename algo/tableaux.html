@@ -18,6 +18,10 @@
 		<div class="w3-container w3-padding">
 			<table id="SecondTable" class="w3-table-all w3-hoverable w3-border"></table>
 		</div>
+		
+		<div class="w3-container w3-padding">
+			<table id="TableRelation" class="w3-table-all w3-hoverable w3-border"></table>
+		</div>
 
 
 	</div>
@@ -25,11 +29,11 @@
 
 
 	<script type="text/javascript">
-		var tabAffiche= function(tableau, div){
+		var tabAffiche = function(tableau, div){
 			for(let ligne in tableau){
 				let curentLigne = document.getElementById(div).appendChild(document.createElement("tr"));
 				if(ligne == 0){
-					curentLigne.classList.add('w3-red');
+					curentLigne.classList.add('w3-pale-red');
 				}
 				for(let column of tableau[ligne]){
 					curentLigne.appendChild(document.createElement("td"));
@@ -37,11 +41,29 @@
 				}
 			}
 		}
+		var tabAffiche2D = function(tableau, div){
+			for(let ligne in tableau){
+				let curentLigne = document.getElementById(div).appendChild(document.createElement("tr"));
+				if(ligne == 0){
+					curentLigne.classList.add('w3-pale-red');
+				}
+				for(let column in tableau[ligne]){
+					curentLigne.appendChild(document.createElement("td"));
+					if(column == 0){
+						curentLigne.lastChild.classList.add('w3-pale-red');
+						if(ligne == 0){
+							curentLigne.lastChild.classList.remove('w3-pale-red');
+							curentLigne.lastChild.classList.add('w3-light-grey');
+						}
+					}
+					curentLigne.lastChild.innerHTML = tableau[ligne][column];
+				}
+			}
+		}
 
 		tabAffiche(Tab, "mainTable");
 		tabAffiche(Tab2, "SecondTable");
-
-
+		tabAffiche2D(TabRelation, "TableRelation");
 
 
 	</script>

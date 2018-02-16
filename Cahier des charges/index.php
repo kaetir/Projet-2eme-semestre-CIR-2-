@@ -22,6 +22,7 @@
 </head>
 <body class="w3-container w3-padding">
 
+	<?php include 'readme.html';	?>
 	<div class="w3-card w3-container ">
 		<a href="TABLEAU RÉCAPITULATIF RELATIONS.ods"><i class="fa fa-file-excel-o"></i> tableau des relations</a>	
 	</div>
