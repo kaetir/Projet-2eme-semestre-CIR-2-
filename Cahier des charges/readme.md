@@ -47,6 +47,11 @@
 ## Tableau d'état final
 
 ### Mode ARCADE à 4 joueurs
+
+#### Organisation
+Le jeu s'organise sur 3 jours de travail. Le joueur doit obtenir assez de points d'action pour compléter 60% de la barre de progrès. Pour récupérer les points d'action, le joueur doit s'adresser aux PNJs nommés précédemment (le bosseur, le suceptible, le gaffeur et le manipulateur), il a le choix entre "COOP" et "BETRAY" à chaque rencontre avec un PNJ. Il peut choisir d'aider le PNJ ou de le trahir. Les actions du joueur ont des répercussions sur la productivité de l'équipe. Cependant, les PNJs peuvent également "COOP" et "BETRAY" le joueur. Il faudra faire avec les décisions de chacun afin d'obtenir assez de points d'action pour gagner. Les points d'action sont visibles dans le "MENU OBJECTIF". On peut y retrouver la liste des personnages et les points d'action disponibles. Sur les 3 jours de travail, le joueur doit parler une fois à chaque personnage. Il ne peut leur adresser la parole qu'une seule fois par jour. Le jour suivant, les PNJs sont de nouveau abordables. Après chaque décision du joueur, une alerte visuelle l'informe des conséquences de son action et distribue un conseil sur le jeu. ATTENTION, les PNJs se souviennent de l'action du jour précédent. Exemple : si le joueur décide de "BETRAY" un PNJ, celui-ci pourra agir en fonction de cette trahison. On se base sur la méthode de réaction suivante :
+
+
 |	|BOSSEUR|SUCEPTIBLE|GAFFEUR|MANIPULATEUR|
 |--|--|--|--|--|
 |APRÈS TRICHE_1|COOP|SABOTAGE|?|COOP|
@@ -55,6 +60,14 @@
 |APRÈS COOP_1|COOP|COOP|?|SABOTAGE|
 |APRÈS COOP_2|COOP|COOP|?|COOP|
 |APRÈS COOP_3|COOP|COOP|?|COOP|
+
+#### Calcul de points
+
+|ACTION JOUEUR|VS|ACTION PNJS|TOTAL|
+|COOP|VS|BETRAY|= +0,5 PTS|
+|BETRAY|VS|BETRAY|= -1 PTS|
+|COOP|VS|COOP|= +1 PTS|
+|BETRAY|VS|BETRAY|= - 0,5 PTS|
 
 
 
