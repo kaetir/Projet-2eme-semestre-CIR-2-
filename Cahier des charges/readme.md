@@ -64,6 +64,7 @@ Le jeu s'organise sur 3 jours de travail. Le joueur doit obtenir assez de points
 #### Calcul de points
 
 |ACTION JOUEUR|VS|ACTION PNJS|TOTAL|
+|--|--|--|--|--|
 |COOP|VS|BETRAY|= +0,5 PTS|
 |BETRAY|VS|BETRAY|= -1 PTS|
 |COOP|VS|COOP|= +1 PTS|
