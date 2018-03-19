@@ -49,10 +49,10 @@ function sortDir(&$tab)
 		$dir = scandir(".");
 		sortDir($dir);
 		foreach ($dir as $file){
-			if($file != "." && $file[0] != "." && $file != "index.php"){
+			if($file != "." && $file[0] != "." && $file != "index.php" && $file != "fonts"){
 				dir:
 				if(is_dir($file) && $file[0] != "."){
-					echo "<div class='w3-container w3-card w3-margin w3-padding'> $file <hr> ";
+					echo "<div class='w3-container w3-card w3-margin w3-padding'> <a href='$file'>$file </a> <hr> ";
 
 					$tmpDir = scandir($file);
 					foreach ($tmpDir as $image) {
@@ -71,6 +71,9 @@ function sortDir(&$tab)
 				}else{
 					echo "<a href='$file'><img class='w3-img' src='$file' alt='$image'> </a>";
 				}
+			}
+			else if($file == "fonts"){
+				echo "<div class='w3-container w3-card w3-margin w3-padding'> <a href='$file'>$file </a> </div> ";
 			}
 		}
 		?>
