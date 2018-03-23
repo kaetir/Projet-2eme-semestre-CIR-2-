@@ -3,6 +3,11 @@
 <head>
 	<title>TRUST ME</title>
 	<meta charset="utf-8">
+	<script src="src/boot.js"></script>
+    <script src="src/preloader.js"></script>
+    <script src="src/main_menu.js"></script>
+    <script src="src/how_to.js"></script>
+    <script src="src/game.js"></script>
 </head>
 <body>
 	<div id="jeu"></div>
@@ -11,8 +16,20 @@
 
 
 
-	<script type="text/javascript" src="js/libs/require.js" data-main="js/main"></script>
-	<!--script src="phaser.js"></script-->
-	<!--script src="jeu.js"></script-->
+	<script type="text/javascript" src="js/libs/require.js" data-main="js/main">
+		
+		(function() {
+    		var game = new Phaser.Game(680, 480, Phaser.AUTO,'phaser-example');
+    		
+    		/*Chaque état appelle le suivant.*/
+
+    		game.state.add('boot', Ball.Boot);				/*Premier état du jeu, le démarage.*/
+    		game.state.add('preloader', Ball.Preloader);	/*Préchargement*/
+    		game.state.add('main_menu', Ball.MainMenu);
+    		game.state.add('how_to', Ball.Howto);
+    		game.state.add('game', Ball.Game);
+    		game.state.start('boot');
+		})();
+	</script>
 </body>
 </html>

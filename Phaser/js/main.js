@@ -24,7 +24,7 @@ require(['Phaser',"menu"],
 		var background;
 
 		function preload() {
-			game.load.spritesheet('button', 'png/bouton_de_tes_morts.png', 250, 100);
+			game.load.spritesheet('button', 'asset/img/bouton_de_tes_morts.png', 250, 100);
 		}
 
 
