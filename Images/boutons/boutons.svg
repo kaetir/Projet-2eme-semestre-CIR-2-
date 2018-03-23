@@ -15,10 +15,10 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
-   inkscape:export-filename="/var/www/html/PROJET_INFO/Projet-2eme-semestre-CIR-2-/Images/personnages/bouton_betray.png"
+   inkscape:export-filename="/var/www/html/PROJET_INFO/Projet-2eme-semestre-CIR-2-/Images/boutons/bouton_select.png"
    inkscape:export-xdpi="194"
    inkscape:export-ydpi="194"
-   sodipodi:docname="dessin.svg">
+   sodipodi:docname="boutons.svg">
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -29,10 +29,10 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="5.6"
-     inkscape:cx="426.88163"
+     inkscape:cx="378.78207"
      inkscape:cy="786.94529"
      inkscape:document-units="px"
-     inkscape:current-layer="layer3"
+     inkscape:current-layer="layer6"
      showgrid="false"
      inkscape:window-width="1315"
      inkscape:window-height="744"
@@ -47,7 +47,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -66,7 +66,9 @@
   <g
      inkscape:groupmode="layer"
      id="layer3"
-     inkscape:label="BETRAY">
+     inkscape:label="BETRAY"
+     sodipodi:insensitive="true"
+     style="display:none">
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:28.37595177px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -80,6 +82,63 @@
          x="321.47153"
          y="322.78973"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Just Me Again Down Here';-inkscape-font-specification:'Just Me Again Down Here';fill:#e54a3b;fill-opacity:1">BETRAY</tspan></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer4"
+     inkscape:label="ARCADE"
+     style="display:none">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:56.27636337px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="355.83841"
+       y="290.92233"
+       id="text4250"
+       sodipodi:linespacing="125%"
+       transform="matrix(0.93124395,-0.11187098,0.12716507,1.0585561,0,0)"><tspan
+         sodipodi:role="line"
+         id="tspan4252"
+         x="355.83841"
+         y="290.92233"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:28.13818169px;font-family:'Just Me Again Down Here';-inkscape-font-specification:'Just Me Again Down Here'">ARCADE</tspan></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer5"
+     inkscape:label="HISTORY"
+     style="display:none"
+     sodipodi:insensitive="true">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:37.164505px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="354.78244"
+       y="297.26276"
+       id="text4255"
+       sodipodi:linespacing="125%"
+       transform="matrix(0.94436649,-0.11580987,0.10454833,1.0460899,0,0)"><tspan
+         sodipodi:role="line"
+         id="tspan4257"
+         x="354.78244"
+         y="297.26276"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:29.03477097px;font-family:'Just Me Again Down Here';-inkscape-font-specification:'Just Me Again Down Here'">HISTORY</tspan></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer6"
+     inkscape:label="SELECT">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="333.89899"
+       y="307.17337"
+       id="text4260"
+       sodipodi:linespacing="125%"
+       transform="matrix(0.99418421,-0.1076929,0.1076929,0.99418421,0,0)"><tspan
+         sodipodi:role="line"
+         id="tspan4262"
+         x="333.89899"
+         y="307.17337"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.25px;font-family:'Just Me Again Down Here';-inkscape-font-specification:'Just Me Again Down Here'">SELECT</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
