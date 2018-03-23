@@ -1,14 +1,14 @@
 define(["coups","game"], function(coup,game){
     class Personnage {
-    	static this.nbJoueur = 0;
-    	
+
+
         constructor(nom,type){
     		
             this.type = type; 			//string
     		
             if(type == "Suceptible"){
     			
-                this.TRIGERED = [];/*Tableau récapitulatif des persos qui ont l'on BETRAY*/
+                this.TRIGERED = [""];/*Tableau récapitulatif des persos qui ont l'on BETRAY*/
     			
                 /*
                 description : Fonction qui push l'id d'un perso dans le tableau TRIGERED.
@@ -16,28 +16,38 @@ define(["coups","game"], function(coup,game){
                 return :NADA
                 */
 
-                this.I_AM_TRIGERED = function(&perso){
+                this.I_AM_TRIGERED = function(perso){
     				this.TRIGERED.push(this.id);
     			}
     		}
     		this.nom = nom;				//string
-    		this.id = this.nbJoueur;	//int
-    		this.nbJoueur++;			//int
+    		this.id = Personnage.prototype.nbJoueur;	//int
+    		Personnage.prototype.nbJoueur++;			//int
     		this.memoire = [];			//tableau de coups
 
     	}
     	
+        present(){
+            if(this.type != "Suceptible"){
+                console.log('Bonjour je suis '+ this.nom + " id:"+this.id)        
+            }else{
+                console.log('Bonjour je suis '+ this.nom + " id:"+this.id + " trigger :" + this.TRIGERED)        
+            }
+        }
+
+
     	/*
     	description : Affectation mémoire du coup donnée et reçu.
     	argument : donne, recu, et un personnage.
     	return :NADA
     	 */
     	
-    	trade(donnee, recu, &perso){
+    	trade(donnee, recu, perso, game){
     		if(perso.id != this.id){
     			this.memoire.push(coup(donnee,recu,perso.id, game.tour));
     			perso.memoire.push(coup(recu,perso.donne_for_trade,this.id, game.tour))
     		}
+            console.log('')
     	}
 
         /*
@@ -57,7 +67,7 @@ define(["coups","game"], function(coup,game){
          */
 
 
-    	donne_for_trade($perso){
+    	donne_for_trade(perso){
 
     		switch (this.type) {
 
@@ -146,6 +156,8 @@ define(["coups","game"], function(coup,game){
 
 
     } 
+
+    Personnage.prototype.nbJoueur = 0;
 
     return Personnage;
 });
