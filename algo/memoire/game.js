@@ -8,12 +8,12 @@ define(["personnage"], function(personage){
     		this.tour++;
     	}
     	addJoueur(nom,type){
-    		if(game.prototype.liste_type.some(value => value == type))    {
+    		if(game.prototype.liste_type.includes(type))    {
     			this.tabJoueur.push(new personage(nom,type))
     		}
     	}
     } 
-    game.prototype.liste_type = ["Manipulateur", "Suceptible"];
+    game.prototype.liste_type = ["Manipulateur", "Suceptible","Bosseur", "Gaffeur"];
 
     return game;
 });

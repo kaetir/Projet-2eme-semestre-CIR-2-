@@ -8,7 +8,7 @@ define(["coups","game"], function(coup,game){
     		
             if(type == "Suceptible"){
     			
-                this.TRIGERED = [""];/*Tableau récapitulatif des persos qui ont l'on BETRAY*/
+                this.TRIGERED = [];/*Tableau récapitulatif des persos qui ont l'on BETRAY*/
     			
                 /*
                 description : Fonction qui push l'id d'un perso dans le tableau TRIGERED.
@@ -34,41 +34,48 @@ define(["coups","game"], function(coup,game){
                 console.log('Bonjour je suis '+ this.nom + " id:"+this.id + " trigger :" + this.TRIGERED)        
             }
         }
-
-
+        history(){
+            console.log(this.memoire);
+        }
+        full(){
+            this.present()
+            this.history()
+        }
     	/*
     	description : Affectation mémoire du coup donnée et reçu.
     	argument : donne, recu, et un personnage.
     	return :NADA
     	 */
     	
-    	trade(donnee, recu, perso, game){
-    		if(perso.id != this.id){
-    			this.memoire.push(coup(donnee,recu,perso.id, game.tour));
-    			perso.memoire.push(coup(recu,perso.donne_for_trade,this.id, game.tour))
-    		}
-            console.log('')
+    	trade(donnee , perso, game){
+            console.log(this.nom+ ' trade avec ' + perso.nom);
+            if(perso.id != this.id){
+                this.memoire.push(new coup(donnee,perso.donne_for_trade(perso,game),perso.id, game.tour));
+                perso.memoire.push(new coup(perso.donne_for_trade(this,game),donnee,this.id, game.tour))
+                if(perso.type == "Suceptible" && donnee == false ){
+                    if(!perso.TRIGERED.includes(this.id))
+                        perso.TRIGERED.push(this.id);
+                }
+
+            }
     	}
 
         /*
         description : Fonction test, mémoire vide ou non.
         argument : nada
         return :Bool true = mémoire vide OU false = mémoire utilisé.
-         */
-    	
-    	memoire_is_empty(){
+        */
+       	memoire_is_empty(){
     		return (this.memoire == []);
     	}
+
 
         /*
         description : Algo d'échange entre 2 personnages.
         argument : Pointeur sur le type du perso.
         return : Bool true ou false selon les persos.
-         */
-
-
-    	donne_for_trade(perso){
-
+        */
+    	donne_for_trade(perso,game){
     		switch (this.type) {
 
     		 	case "Manipulateur":
@@ -86,41 +93,39 @@ define(["coups","game"], function(coup,game){
     		 		
                     /*Premier échange avec l'individu.*/
     		 		
-                    if(this.memoire_is_empty == true){
-    				return true;
+                    if(this.memoire_is_empty() == true){
+    				    return true;
     				}
     				else{
-    					if(game.tour = 2){/*Deuxième échange avec l'individu.*/
-    					return false;
-    				}
-
+                        if(game.tour = 2){/*Deuxième échange avec l'individu.*/
+    					   return false;
+    				    }
                     /*Après le deuxième tour, le manipulateur fait des choix adaptatifs.*/
 
-    				else{
-    					if(last_turn == true && last_last_turn == true){
-    						return false;
-    					}
-    					else{
-    						return true;
-    					}
-    				}
+    	       			else{
+        					if(last_turn == true && last_last_turn == true){
+        						return false;
+    					   }
+    					   else{
+    						  return true;
+    					   }
+    				    }
     				}
     		 		break;
     		 		
     		 	case "Suceptible":
-
                 /*Liste d'échanges: COOP >> ADAPTATION >> ADAPTATION*/
 
-                    /*Premier échange avec l'individu.*/
+                    /*Premier échange de l'individu.*/
 
-    		 		if(memoire_is_empty == true){
+    		 		if(this.memoire_is_empty() == true){
     					return true;
     				}
 
                     /*Reste des échanges avec l'individu.*/
 
     				else{
-    					if(TRIGERED.includes(this.id)){/*On teste si l'id du perso se trouve dans le tableau TRIGERED*/
+    					if(this.TRIGERED.includes(perso.id)){/*On teste si l'id du perso se trouve dans le tableau TRIGERED*/
     						return false;
     					}
     					else{
