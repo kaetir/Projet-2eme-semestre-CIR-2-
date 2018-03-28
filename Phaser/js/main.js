@@ -25,12 +25,12 @@ require(['Phaser',"main_menu","preloader","game","boot"],
     		
     	/*Chaque état appelle le suivant.*/
 
-    	game.state.add('boot', Ball.Boot);				/*Premier état du jeu, le démarage.*/
     	game.state.add('preloader', Ball.Preloader);	/*Préchargement*/
+    	game.state.add('boot', Ball.Boot);				/*Premier état du jeu, le démarage.*/
     	game.state.add('main_menu', Ball.MainMenu);
     	game.state.add('how_to', Ball.Howto);
     	game.state.add('game', Ball.Game);
-    	game.state.start('boot');
+    	game.state.start('preloader');
 		
 });
 
