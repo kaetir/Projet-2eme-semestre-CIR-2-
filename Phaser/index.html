@@ -16,20 +16,6 @@
 
 
 
-	<script type="text/javascript" src="js/libs/require.js" data-main="js/main">
-		
-		(function() {
-    		var game = new Phaser.Game(680, 480, Phaser.AUTO,'phaser-example');
-    		
-    		/*Chaque état appelle le suivant.*/
-
-    		game.state.add('boot', Ball.Boot);				/*Premier état du jeu, le démarage.*/
-    		game.state.add('preloader', Ball.Preloader);	/*Préchargement*/
-    		game.state.add('main_menu', Ball.MainMenu);
-    		game.state.add('how_to', Ball.Howto);
-    		game.state.add('game', Ball.Game);
-    		game.state.start('boot');
-		})();
-	</script>
+	<script type="text/javascript" src="js/libs/require.js" data-main="js/main">	</script>
 </body>
 </html>

@@ -2,26 +2,4 @@ define(["Phaser"], function(Phaser){
 	
 	
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
-
-	
-
 });
