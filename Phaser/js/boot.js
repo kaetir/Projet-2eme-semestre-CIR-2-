@@ -1,20 +1,10 @@
-define(["Phaser"], function(Phaser){
-    var Ball = {
-        _WIDTH: 680,
-        _HEIGHT: 480
-    };
-
-    Ball.Boot = function(game) {};
+define(["Phaser","preloader"], function(Phaser,Ball){
+    
+    Ball.Boot = (game)=> {};
     Ball.Boot.prototype = {
-        /*Chargement des images nécéssaire au fonctionnement du preloader*/
 
-        preload: function() {
-            this.load.json('boutons_json', 'asset/img/boutons_sprite.json');
-            this boutonsJSON = game.cache.getJSON('boutons_json');
-            this.load.atlas('boutons', 'asset/img/boutons_sprite.png',null, boutonsJSON);
-        },
-
-        create: function() {
+        create: ()=> {
+            bouton = this.add(Phaser.button(200, 400, 'buttons', actionOnClick, this, 2, 1, 0));
             this.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
             this.game.scale.pageAlignHorizontally = true;
             this.game.scale.pageAlignVertically = true;
