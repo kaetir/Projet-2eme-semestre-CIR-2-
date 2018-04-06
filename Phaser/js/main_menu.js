@@ -1,5 +1,4 @@
-define(["Phaser"], function(Phaser){
-	
-	
 
-});
+function main_menu (){
+
+}
