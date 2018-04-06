@@ -1,10 +1,8 @@
 define(["Phaser"], function(Phaser){
-    var Ball = {
-        _WIDTH: 680,
-        _HEIGHT: 480
-    };
+    var game = function() {
 
-    Ball.preload = function(game) {
+    };
+    game.prototype.preload = function() {
 
         /*Affichage du sprite de la barre de chargement*/
 
@@ -17,12 +15,35 @@ define(["Phaser"], function(Phaser){
         //this.load.spritesheet('button-start', 'img/button-start.png', 146, 51);
 
         /*this.load.audio('audio-bounce', ['audio/bounce.ogg', 'audio/bounce.mp3', 'audio/bounce.m4a']);*/
-        this.load.json('boutons_json', 'asset/img/boutons_sprite.json');
-        this.load.atlas('boutons_sprite', 'asset/img/boutons_sprite.png',null, "boutons_json");
+
+        this.game.load.atlasJSONArray('boutons_sprite', 'asset/img/boutons_sprite.png', "asset/img/boutons_sprite.json");
+        
+        sprite = this.game.add.sprite(100, 180, 'boutons_sprite', 'bouton_arcade');
+        
+        var bouton = this.game.add.button(this.game.world.centerX - 95, 400,"bouton_arcade", actionOnClick, this, 'over', 'out', 'down');
+        bouton.onInputOver.add(over, this);
+        bouton.onInputOut.add(out, this);
+
+
+        function over() {
+            console.log('button over');
+        }
+
+        function out() {
+            console.log('button out');
+        }
+
+        function actionOnClick () {
+            background.visible =! background.visible;
+        }
+
+
+        var actionOnClick = function(){
+            this.game.state.start('boot');
+        }
+
     };
 
-    Ball.create = function() {
-        this.game.state.start('boot');
-    };
-    return Ball;
+    
+    return game;
 });
