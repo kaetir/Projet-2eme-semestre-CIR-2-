@@ -14,7 +14,10 @@ function preload() {
 
     
     game.load.atlas('gaffeur', 'assets/sprite_sheet/gaffeur_sprite.png', 'assets/sprite_sheet/json/gaffeur_sprite.json', Phaser.Loader.TEXTURE_ATLAS_JSON_HASH);
-    game.load.atlas('bouton', 'assets/sprite_sheet/boutons_sprite.png', 'assets/sprite_sheet/json/boutons_sprite.json', Phaser.Loader.TEXTURE_ATLAS_JSON_HASH);
+    game.load.atlas('bosseur', 'assets/sprite_sheet/bosseur_sprite.png', 'assets/sprite_sheet/json/bosseur_sprite.json', Phaser.Loader.TEXTURE_ATLAS_JSON_HASH);
+    game.load.atlas('susceptible', 'assets/sprite_sheet/susceptible_sprite.png', 'assets/sprite_sheet/json/susceptible_sprite.json', Phaser.Loader.TEXTURE_ATLAS_JSON_HASH);
+    game.load.atlas('manipulateur', 'assets/sprite_sheet/manipulateur_sprite.png', 'assets/sprite_sheet/json/manipulateur_sprite.json', Phaser.Loader.TEXTURE_ATLAS_JSON_HASH);
+    game.load.atlas('boutons', 'assets/sprite_sheet/boutons_sprite.png', 'assets/sprite_sheet/json/boutons_sprite.json', Phaser.Loader.TEXTURE_ATLAS_JSON_HASH);
 
 
 
@@ -30,42 +33,8 @@ function preload() {
 
 
 function create() {
-    
-
-    var billy =game.add.sprite(0,0,"gaffeur");
-    billy.scale.setTo(0.5,0.5);
-    billy.anchor.setTo(0,0);
-    
-    billy.animations.add('jump');
-    billy.animations.play('jump', 12, true);
-
-
-    var bouton = this.game.add.button(this.game.world.centerX - 250, 400,"bouton", actionOnClick, this,);
-    bouton.scale.setTo(0.5,0.5);
-    bouton.setFrames(2,0,1);
-
-    bouton.onInputOver.add(over, this);
-    bouton.onInputOut.add(out, this);
-
-    function over() {
-        console.log('button over');
-    }
-
-    function out() {
-        console.log('button out');
-    }
-
-    function actionOnClick () {
-        console.log('click');
-    }
-
-
-    var actionOnClick = function(){
-        //this.game.state.start('boot');
-    }
-
-
-
+    game.state.add("main_menu", main_menu);
+    game.state.start("main_menu");
 
 
 }
