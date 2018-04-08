@@ -11,6 +11,7 @@ require(["coups","game","joueur","personnage"],
         
         Game.addJoueur("Billy","Bosseur");
         Game.addJoueur("Jeanne","Suceptible");
+        Game.addJoueur("Teemo","Gaffeur");
         Game.addJoueur("Ed","Manipulateur");
         //Game.addJoueur("Jackie","Humain");
         Game.tabJoueur.forEach( (perso)=>{ perso.present() });
@@ -33,10 +34,18 @@ require(["coups","game","joueur","personnage"],
         Game.autoTrade();
         Game.autoTrade();
         Game.autoTrade();
+        Game.autoTrade();
+        Game.autoTrade();
 
         Game.tabJoueur.forEach( (perso)=>{ perso.full() });
 
-
+        for(let i in Game.tabJoueur){
+            for(let j in Game.tabJoueur){
+                if(i != j){
+                    Game.score(Game.tabJoueur[i],Game.tabJoueur[j]);         
+                }
+            }
+        }
 
 
 
