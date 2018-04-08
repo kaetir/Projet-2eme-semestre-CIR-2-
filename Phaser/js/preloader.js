@@ -1,40 +1,53 @@
-function preload() {
+function boot(){
+	
+}
+function preload () {
+	game.load.image("load_bar_vide", "assets/load_bar/load_bar_vide.png");
+	game.load.image("load_bar_pleine", "assets/load_bar/load_bar_pleine.png");
 
-    /*Affichage du sprite de la barre de chargement*/
+	game.load.onFileComplete.add(fileComplete, this);
 
-    //this.preloadBar = this.add.sprite((Ball._WIDTH-158)*0.5, (Ball._HEIGHT-50)*0.5, 'preloaderBar');
+	var barre_vide;
+	var barre_pleine;
 
-    //this.load.setPreloadSprite(this.preloadBar);
+	//	This callback is sent the following parameters:
+	function fileComplete(progress, cacheKey, success, totalLoaded, totalFiles) {
 
-    //this.load.image('ball', 'img/ball.png');
+		/*Affichage du sprite de la barre de chargement*/
+    	if(cacheKey == "load_bar_vide"){
+    		barre_vide = game.add.sprite(game.world.centerX -250,game.world.centerY, "load_bar_vide");
+    	}
+    	if(cacheKey == "load_bar_pleine"){	
+   			barre_pleine = game.add.sprite(game.world.centerX - 250,game.world.centerY, "load_bar_pleine");
+   			game.load.setPreloadSprite(barre_pleine);
+    	}
+    	if(cacheKey == "boutons"){ //mettre ici la desnière ressource chargé	
+    		barre_vide.destroy();
+    		barre_pleine.destroy();
+    	}
+	}
 
-    //this.load.spritesheet('button-start', 'img/button-start.png', 146, 51);
+	game.stage.backgroundColor = '#1394a2';
 
-    /*this.load.audio('audio-bounce', ['audio/bounce.ogg', 'audio/bounce.mp3', 'audio/bounce.m4a']);*/
+	load();
+};
 
-    
-    game.load.atlas('gaffeur', 'assets/sprite_sheet/gaffeur_sprite.png', 'assets/sprite_sheet/json/gaffeur_sprite.json', Phaser.Loader.TEXTURE_ATLAS_JSON_HASH);
-    game.load.atlas('bosseur', 'assets/sprite_sheet/bosseur_sprite.png', 'assets/sprite_sheet/json/bosseur_sprite.json', Phaser.Loader.TEXTURE_ATLAS_JSON_HASH);
-    game.load.atlas('susceptible', 'assets/sprite_sheet/susceptible_sprite.png', 'assets/sprite_sheet/json/susceptible_sprite.json', Phaser.Loader.TEXTURE_ATLAS_JSON_HASH);
-    game.load.atlas('manipulateur', 'assets/sprite_sheet/manipulateur_sprite.png', 'assets/sprite_sheet/json/manipulateur_sprite.json', Phaser.Loader.TEXTURE_ATLAS_JSON_HASH);
-    game.load.atlas('boutons', 'assets/sprite_sheet/boutons_sprite.png', 'assets/sprite_sheet/json/boutons_sprite.json', Phaser.Loader.TEXTURE_ATLAS_JSON_HASH);
+function load() {
 
-
-
-
-    /*this.game.load.atlasJSONArray('boutons_sprite', 'assets/sprite_sheet/boutons_sprite.png', "assets/sprite_sheet/boutons_sprite.json");
-    
-    sprite = this.game.add.sprite(100, 180, 'boutons_sprite', 'bouton_arcade');
-    
-    */
+	game.load.atlas('gaffeur', 'assets/sprite_sheet/gaffeur_sprite.png', 'assets/sprite_sheet/json/gaffeur_sprite.json', Phaser.Loader.TEXTURE_ATLAS_JSON_HASH);
+	game.load.atlas('bosseur', 'assets/sprite_sheet/bosseur_sprite.png', 'assets/sprite_sheet/json/bosseur_sprite.json', Phaser.Loader.TEXTURE_ATLAS_JSON_HASH);
+	game.load.atlas('susceptible', 'assets/sprite_sheet/susceptible_sprite.png', 'assets/sprite_sheet/json/susceptible_sprite.json', Phaser.Loader.TEXTURE_ATLAS_JSON_HASH);
+	game.load.atlas('manipulateur', 'assets/sprite_sheet/manipulateur_sprite.png', 'assets/sprite_sheet/json/manipulateur_sprite.json', Phaser.Loader.TEXTURE_ATLAS_JSON_HASH);
+	game.load.atlas('boutons', 'assets/sprite_sheet/boutons_sprite.png', 'assets/sprite_sheet/json/boutons_sprite.json', Phaser.Loader.TEXTURE_ATLAS_JSON_HASH);
+	
 
 };
 
-
-
 function create() {
-    game.state.add("main_menu", main_menu);
-    game.state.start("main_menu");
+	game.physics.startSystem(Phaser.Physics.ARCADE);
+	game.physics.startSystem(Phaser.Physics.p2JS);
 
+	
+	main_menu();
 
-}
+};

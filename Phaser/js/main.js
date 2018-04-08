@@ -2,8 +2,9 @@
 
 
 var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { 
+    boot : boot,
     preload: preload, 
     create: create, 
-    main_menu : main_menu
+    menu : main_menu
 });
 

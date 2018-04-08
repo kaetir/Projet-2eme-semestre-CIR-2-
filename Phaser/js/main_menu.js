@@ -1,10 +1,9 @@
 
 function main_menu (){
 
-	game.stage.backgroundColor = '#1394a2';
 
-    
-    
+   
+
     var Billy = game.add.sprite(25,100,"bosseur");
     var Teemo = game.add.sprite(225,100,"gaffeur");
     var Jeanne = game.add.sprite(425,100,"susceptible");
@@ -65,5 +64,5 @@ function main_menu (){
         game.state.start('game');
     }
 
-
 }
+
