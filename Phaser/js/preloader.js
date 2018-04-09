@@ -39,6 +39,8 @@ function load() {
 	game.load.atlas('susceptible', 'assets/sprite_sheet/susceptible_sprite.png', 'assets/sprite_sheet/json/susceptible_sprite.json', Phaser.Loader.TEXTURE_ATLAS_JSON_HASH);
 	game.load.atlas('manipulateur', 'assets/sprite_sheet/manipulateur_sprite.png', 'assets/sprite_sheet/json/manipulateur_sprite.json', Phaser.Loader.TEXTURE_ATLAS_JSON_HASH);
 	game.load.atlas('boutons', 'assets/sprite_sheet/boutons_sprite.png', 'assets/sprite_sheet/json/boutons_sprite.json', Phaser.Loader.TEXTURE_ATLAS_JSON_HASH);
+	game.load.atlas('mec', 'assets/sprite_sheet/mec_sprite.png', 'assets/sprite_sheet/json/mec_sprite.json', Phaser.Loader.TEXTURE_ATLAS_JSON_HASH);
+	game.load.atlas('meuf', 'assets/sprite_sheet/meuf_sprite.png', 'assets/sprite_sheet/json/meuf_sprite.json', Phaser.Loader.TEXTURE_ATLAS_JSON_HASH);
 	
 
 };
@@ -46,7 +48,8 @@ function load() {
 function create() {
 	game.physics.startSystem(Phaser.Physics.ARCADE);
 	game.physics.startSystem(Phaser.Physics.p2JS);
-
+	// Stretch to fill
+	game.scale.fullScreenScaleMode = Phaser.ScaleManager.EXACT_FIT;
 	
 	main_menu();
 

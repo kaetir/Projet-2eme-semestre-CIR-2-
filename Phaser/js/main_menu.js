@@ -2,7 +2,6 @@
 function main_menu (){
 
 
-   
 
     var Billy = game.add.sprite(25,100,"bosseur");
     var Teemo = game.add.sprite(225,100,"gaffeur");
@@ -32,37 +31,57 @@ function main_menu (){
 
 
 
-    var arcade = game.add.button(game.world.centerX - 250 - 100, game.world.centerY +100 ,"boutons", actionOnClick);
+    var arcade = game.add.button(game.world.centerX - 250 - 100, game.world.centerY +100 ,"boutons", startArcade, this);
     arcade.scale.setTo(0.5,0.5);
     arcade.setFrames(2,0,1);
 
-
-    var histoire = game.add.button(game.world.centerX +100 , game.world.centerY +100 ,"boutons", actionOnClick);
+    var histoire = game.add.button(game.world.centerX +100 , game.world.centerY +100 ,"boutons", startHistory);
     histoire.scale.setTo(0.5,0.5);
     histoire.setFrames(11,9,10);
 
 
+    /*
+    description : passe en plein ecran
+    argument : none
+    return : none
+    */
+    function gofull() {
+        if (game.scale.isFullScreen){
+            game.scale.stopFullScreen();
+        }
+        else{
+            game.scale.startFullScreen(false);
+        }
+    };
+
 
     /*
-    arcade.onInputOver.add(over, this);
-    arcade.onInputOut.add(out, this);
-
-    function over() {
-        console.log('button over');
-    }
-
-    function out() {
-        console.log('button out');
-    }
-
-    function actionOnClick () {
-        console.log('click');
-    }
+    description : nettoie la scene et lance le mode arcade
+    argument : none
+    return : none
     */
-
-    var actionOnClick = function(){
+    function startArcade (){
+        Billy.destroy();
+        Teemo.destroy();
+        Jeanne.destroy();
+        Ed.destroy();
+        histoire.destroy();
+        arcade.destroy();
+        gofull();
+        game.state.add("game", leJeu);
         game.state.start('game');
-    }
+    };
+
+
+    /*
+    description : nettoie la scene et lance le mode histoire
+    argument : none
+    return : none
+    */
+    function startHistory (){
+
+    };
+
 
 }
 
