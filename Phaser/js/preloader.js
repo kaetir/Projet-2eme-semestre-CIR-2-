@@ -2,10 +2,9 @@ function boot(){
 	
 }
 function preload () {
+	game.load.image('background', 'assets/background/background_accueil.png', 'assets/sprite_sheet/json/manipulateur_sprite.json', Phaser.Loader.TEXTURE_ATLAS_JSON_HASH);
 	game.load.image("load_bar_vide", "assets/load_bar/load_bar_vide.png");
 	game.load.image("load_bar_pleine", "assets/load_bar/load_bar_pleine.png");
-	game.load.image('background', 'assets/background/background_accueil.png', 'assets/sprite_sheet/json/manipulateur_sprite.json', Phaser.Loader.TEXTURE_ATLAS_JSON_HASH);
-	game.add.tileSprite(0, 0, 1000, 600, 'background'); 
 
 	game.load.onFileComplete.add(fileComplete, this);
 
@@ -16,6 +15,10 @@ function preload () {
 	function fileComplete(progress, cacheKey, success, totalLoaded, totalFiles) {
 
 		/*Affichage du sprite de la barre de chargement*/
+		if(cacheKey == "background"){	
+			game.add.tileSprite(0, 0, 800, 600, 'background'); 
+		}
+		
 		if(cacheKey == "load_bar_vide"){
 			barre_vide = game.add.sprite(game.world.centerX -250,game.world.centerY, "load_bar_vide");
 		}
