@@ -5,7 +5,36 @@ var main_menu = {
     Ed      : {},   
 
     create : function(){
+        game.add.tileSprite(0, 0, 800, 600, 'background'); 
+        
+        /*
+        description : passe en plein ecran
+        argument : none
+        return : none
+        */
+        function gofull() {
+            if (game.scale.isFullScreen){
+                game.scale.stopFullScreen();
+            }
+            else{
+                game.scale.startFullScreen(false);
+            }
+        };
 
+        var startingButton = game.add.button(game.world.centerX, game.world.centerY ,"boutons", ()=>{
+            gofull();
+            startingButton.destroy();
+            this.vraiMenu();
+        }, this);
+        startingButton.scale.setTo(0.5,0.5);
+        startingButton.anchor.setTo(0.5,-0.5);
+
+        startingButton.setFrames(2,0,1);
+
+
+    },
+
+    vraiMenu : function(){
         var Billy = game.add.sprite(25,100,"bosseur");
         var Teemo = game.add.sprite(225,100,"gaffeur");
         var Jeanne = game.add.sprite(425,100,"susceptible");
@@ -37,46 +66,32 @@ var main_menu = {
         histoire.setFrames(11,9,10);
 
 
-    /*
-    description : passe en plein ecran
-    argument : none
-    return : none
-    */
-    function gofull() {
-        if (game.scale.isFullScreen){
-            game.scale.stopFullScreen();
-        }
-        else{
-            game.scale.startFullScreen(false);
-        }
-    };
 
 
-    /*
-    description : nettoie la scene et lance le mode arcade
-    argument : none
-    return : none
-    */
-    function startArcade (){
-        Billy.destroy();
-        Teemo.destroy();
-        Jeanne.destroy();
-        Ed.destroy();
-        histoire.destroy();
-        arcade.destroy();
-        gofull();
-        game.state.add("game", leJeu);
-        game.state.start('game');
-    };
-    /*
-    description : nettoie la scene et lance le mode histoire
-    argument : none
-    return : none
-    */
-    function startHistory (){
+        /*
+        description : nettoie la scene et lance le mode arcade
+        argument : none
+        return : none
+        */
+        function startArcade (){
+            Billy.destroy();
+            Teemo.destroy();
+            Jeanne.destroy();
+            Ed.destroy();
+            histoire.destroy();
+            arcade.destroy();
+            game.state.add("game", leJeu);
+            game.state.start('game');
+        };
+        /*
+        description : nettoie la scene et lance le mode histoire
+        argument : none
+        return : none
+        */
+        function startHistory (){
 
-    };
-} 
+        };
+    }
 
 
 

@@ -6,7 +6,6 @@ function preload () {
 	game.load.image("load_bar_vide", "assets/load_bar/load_bar_vide.png");
 	game.load.image("load_bar_pleine", "assets/load_bar/load_bar_pleine.png");
 
-	game.load.audio('boden', ['asset/sound/Ambiance_1.ogg']);
 
 	game.load.onFileComplete.add(fileComplete, this);
 
@@ -34,12 +33,6 @@ function preload () {
     		barre_pleine.destroy();
     	}
 
-    	if(cacheKey=="boden"){
-    		current_music = game.add.audio('boden');
-			current_music.play()
-			current_music.loopFull(0.6);
-			console.log('JE FAIS DE LA MUSIQUE');
-    	}
     }
 
     //game.stage.backgroundColor = '#1394a2';
@@ -55,6 +48,7 @@ function load() {
 	game.load.atlas('manipulateur', 'assets/sprite_sheet/manipulateur_sprite.png', 'assets/sprite_sheet/json/manipulateur_sprite.json', Phaser.Loader.TEXTURE_ATLAS_JSON_HASH);
 	game.load.atlas('mec', 'assets/sprite_sheet/mec_sprite.png', 'assets/sprite_sheet/json/mec_sprite.json', Phaser.Loader.TEXTURE_ATLAS_JSON_HASH);
 	game.load.atlas('meuf', 'assets/sprite_sheet/meuf_sprite.png', 'assets/sprite_sheet/json/meuf_sprite.json', Phaser.Loader.TEXTURE_ATLAS_JSON_HASH);
+	game.load.audio('boden', ['assets/sound/Ambiance_1.ogg']);
 	game.load.atlas('boutons', 'assets/sprite_sheet/boutons_sprite.png', 'assets/sprite_sheet/json/boutons_sprite.json', Phaser.Loader.TEXTURE_ATLAS_JSON_HASH);
 	
 	
@@ -66,7 +60,10 @@ function create() {
 	// Stretch to fill
 	game.scale.fullScreenScaleMode = Phaser.ScaleManager.EXACT_FIT;
 	
+	current_music = game.add.audio('boden');
+	current_music.play()
+	current_music.loopFull(1);
 
-	main_menu();
-
+	game.state.add("menu", main_menu);
+	game.state.start("menu");
 };

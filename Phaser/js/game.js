@@ -6,6 +6,7 @@ var leJeu = {
 	femelle :{},
 	Billy :{},
 	create : function(){
+		game.add.tileSprite(0, 0, 800, 600, 'background'); 
 		femelle = game.add.sprite(0,0, "meuf" );
 		Billy =  game.add.sprite(500,0,"bosseur");
 		// Billy.scale.setTo(0.3,0.3);
