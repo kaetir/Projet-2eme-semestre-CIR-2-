@@ -3,16 +3,30 @@
 var leJeu = {
 
 
-	femmelle :{},
+	femelle :{},
+	Billy :{},
 	preload : function(){
-		femmelle = game.add.sprite(0,0, "meuf");
-		tween = game.add.tween(femmelle.scale).to( { x: 0.3, y: 0.3 }, 3000, Phaser.Easing.Elastic.Out, true);
+		femelle = game.add.sprite(0,0, "meuf" );
+		Billy =  game.add.sprite(500,0,"bosseur");
+		// Billy.scale.setTo(0.3,0.3);
+
+		tween = game.add.tween(femelle.scale).to( { x: 0.3, y: 0.3 }, 3000, Phaser.Easing.Elastic.Out, true);
+		twee1 = game.add.tween(Billy.scale).to( { x: 0.3, y: 0.3 }, 3000, Phaser.Easing.Elastic.Out, true);
 		
-		femmelle.animations.add('jump');
+		// femelle.animations.add('jump');
 
-		game.physics.enable(femmelle, Phaser.Physics.ARCADE);
-		femmelle.body.allowRotation = false;
+		game.physics.enable(Billy, Phaser.Physics.ARCADE);
+		game.physics.enable(femelle, Phaser.Physics.ARCADE);
 
+		
+		
+		femelle.body.collideWorldBounds = true;
+		femelle.body.velocity.x = 200;
+		femelle.body.bounce.setTo(1, 1);
+
+		Billy.body.collideWorldBounds = true;
+		// Billy.body.immovable = true;
+		Billy.body.bounce.setTo(1, 1);
 
 	},
 
@@ -21,17 +35,24 @@ var leJeu = {
 		//  only move when you click
 		if (game.input.mousePointer.isDown){
 			//  100 is the speed it will move towards the mouse
-			game.physics.arcade.moveToPointer(femmelle, 100);
+			game.physics.arcade.moveToPointer(femelle, 250);
 
 			//  if it's overlapping the mouse, don't move any more
-			if (Phaser.Rectangle.contains(femmelle.body, game.input.x, game.input.y)){
-				femmelle.body.velocity.setTo(0, 0);
+			if (Phaser.Rectangle.contains(femelle.body, game.input.x, game.input.y)){
+				femelle.body.velocity.setTo(0, 0);
 			}else{
-				femmelle.animations.play('jump', 12, false);
+				femelle.animations.play('jump', 12, false);
 			}
 		}
 		else{
-			femmelle.body.velocity.setTo(0, 0);
+			//femelle.body.velocity.setTo(0, 0);
 		}
+		game.physics.arcade.collide(femelle, Billy);
+	},
+	render : function(){
+		game.debug.bodyInfo(Billy, 32, 32);
+	    game.debug.body(femelle);
+	    game.debug.body(Billy);
+
 	} 
 }
