@@ -6,8 +6,11 @@ function preload () {
 	game.load.image("load_bar_vide", "assets/load_bar/load_bar_vide.png");
 	game.load.image("load_bar_pleine", "assets/load_bar/load_bar_pleine.png");
 
+	game.load.audio('boden', ['asset/sound/Ambiance_1.ogg']);
+
 	game.load.onFileComplete.add(fileComplete, this);
 
+	var current_music;
 	var barre_vide;
 	var barre_pleine;
 
@@ -30,6 +33,13 @@ function preload () {
     		barre_vide.destroy();
     		barre_pleine.destroy();
     	}
+
+    	if(cacheKey=="boden"){
+    		current_music = game.add.audio('boden');
+			current_music.play()
+			current_music.loopFull(0.6);
+			console.log('JE FAIS DE LA MUSIQUE');
+    	}
     }
 
     //game.stage.backgroundColor = '#1394a2';
@@ -47,7 +57,7 @@ function load() {
 	game.load.atlas('meuf', 'assets/sprite_sheet/meuf_sprite.png', 'assets/sprite_sheet/json/meuf_sprite.json', Phaser.Loader.TEXTURE_ATLAS_JSON_HASH);
 	game.load.atlas('boutons', 'assets/sprite_sheet/boutons_sprite.png', 'assets/sprite_sheet/json/boutons_sprite.json', Phaser.Loader.TEXTURE_ATLAS_JSON_HASH);
 	
-
+	
 };
 
 function create() {
