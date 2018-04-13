@@ -3,15 +3,15 @@
 var leJeu = {
 
 
-	chemale :{},
+	femmelle :{},
 	preload : function(){
-		chemale = game.add.sprite(0,0, "meuf");
-		tween = game.add.tween(chemale.scale).to( { x: 0.5, y: 0.5 }, 3000, Phaser.Easing.Elastic.Out, true);
+		femmelle = game.add.sprite(0,0, "meuf");
+		tween = game.add.tween(femmelle.scale).to( { x: 0.3, y: 0.3 }, 3000, Phaser.Easing.Elastic.Out, true);
 		
-		chemale.animations.add('jump');
+		femmelle.animations.add('jump');
 
-		game.physics.enable(chemale, Phaser.Physics.ARCADE);
-		chemale.body.allowRotation = false;
+		game.physics.enable(femmelle, Phaser.Physics.ARCADE);
+		femmelle.body.allowRotation = false;
 
 
 	},
@@ -20,17 +20,18 @@ var leJeu = {
 	update : function() {
 		//  only move when you click
 		if (game.input.mousePointer.isDown){
-			//  400 is the speed it will move towards the mouse
-			game.physics.arcade.moveToPointer(chemale, 400);
-			chemale.animations.play('jump', 12, false);
+			//  100 is the speed it will move towards the mouse
+			game.physics.arcade.moveToPointer(femmelle, 100);
 
 			//  if it's overlapping the mouse, don't move any more
-			if (Phaser.Rectangle.contains(chemale.body, game.input.x, game.input.y)){
-				chemale.body.velocity.setTo(0, 0);
+			if (Phaser.Rectangle.contains(femmelle.body, game.input.x, game.input.y)){
+				femmelle.body.velocity.setTo(0, 0);
+			}else{
+				femmelle.animations.play('jump', 12, false);
 			}
 		}
 		else{
-			chemale.body.velocity.setTo(0, 0);
+			femmelle.body.velocity.setTo(0, 0);
 		}
 	} 
 }
