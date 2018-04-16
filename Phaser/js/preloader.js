@@ -9,7 +9,6 @@ function preload () {
 
 	game.load.onFileComplete.add(fileComplete, this);
 
-	var current_music;
 	var barre_vide;
 	var barre_pleine;
 
@@ -42,13 +41,17 @@ function preload () {
 
 function load() {
 
+	game.load.image("logo", "assets/logo/trustMe_logo_app.png");
+	game.load.audio('boden', ['assets/sound/Ambiance_1.ogg']);
 	game.load.atlas('gaffeur', 'assets/sprite_sheet/gaffeur_sprite.png', 'assets/sprite_sheet/json/gaffeur_sprite.json', Phaser.Loader.TEXTURE_ATLAS_JSON_HASH);
 	game.load.atlas('bosseur', 'assets/sprite_sheet/bosseur_sprite.png', 'assets/sprite_sheet/json/bosseur_sprite.json', Phaser.Loader.TEXTURE_ATLAS_JSON_HASH);
 	game.load.atlas('susceptible', 'assets/sprite_sheet/susceptible_sprite.png', 'assets/sprite_sheet/json/susceptible_sprite.json', Phaser.Loader.TEXTURE_ATLAS_JSON_HASH);
 	game.load.atlas('manipulateur', 'assets/sprite_sheet/manipulateur_sprite.png', 'assets/sprite_sheet/json/manipulateur_sprite.json', Phaser.Loader.TEXTURE_ATLAS_JSON_HASH);
 	game.load.atlas('mec', 'assets/sprite_sheet/mec_sprite.png', 'assets/sprite_sheet/json/mec_sprite.json', Phaser.Loader.TEXTURE_ATLAS_JSON_HASH);
 	game.load.atlas('meuf', 'assets/sprite_sheet/meuf_sprite.png', 'assets/sprite_sheet/json/meuf_sprite.json', Phaser.Loader.TEXTURE_ATLAS_JSON_HASH);
-	game.load.audio('boden', ['assets/sound/Ambiance_1.ogg']);
+	game.load.image("table", "assets/table.png");
+	game.load.image("sol", "assets/background/sol_32x32.png");
+	
 	game.load.atlas('boutons', 'assets/sprite_sheet/boutons_sprite.png', 'assets/sprite_sheet/json/boutons_sprite.json', Phaser.Loader.TEXTURE_ATLAS_JSON_HASH);
 	
 	
@@ -60,7 +63,7 @@ function create() {
 	// Stretch to fill
 	game.scale.fullScreenScaleMode = Phaser.ScaleManager.EXACT_FIT;
 	
-	current_music = game.add.audio('boden');
+	var current_music = game.add.audio('boden');
 	current_music.play()
 	current_music.loopFull(1);
 

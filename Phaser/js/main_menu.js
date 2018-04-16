@@ -21,9 +21,13 @@ var main_menu = {
             }
         };
 
+        var Logo = game.add.sprite(game.world.centerX, game.world.centerY , "logo");
+        Logo.scale.setTo(0.7,0.7);
+        Logo.anchor.setTo(0.5,0.8);
         var startingButton = game.add.button(game.world.centerX, game.world.centerY ,"boutons", ()=>{
             gofull();
             startingButton.destroy();
+            Logo.destroy();
             this.vraiMenu();
         }, this);
         startingButton.scale.setTo(0.5,0.5);
