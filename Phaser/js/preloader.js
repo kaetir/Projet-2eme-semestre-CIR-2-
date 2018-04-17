@@ -17,7 +17,7 @@ function preload () {
 
 		/*Affichage du sprite de la barre de chargement*/
 		if(cacheKey == "background"){	
-			game.add.tileSprite(0, 0, 800, 600, 'background'); 
+			game.add.tileSprite(0, 0, 1152, 648, 'background'); 
 		}
 		
 		if(cacheKey == "load_bar_vide"){

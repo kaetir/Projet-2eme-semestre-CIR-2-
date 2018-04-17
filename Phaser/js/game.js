@@ -8,8 +8,8 @@ var leJeu = {
 	Billy :{},
 	LaTabola : {},
 	create : function(){
-		game.add.tileSprite(0, 0, 800, 600, 'background');
-		game.add.tileSprite(100, 100, 600, 400, 'sol');
+		game.add.tileSprite(0, 0, 1152, 648, 'background');
+		game.add.tileSprite(100,100,1152-200,648-200,'sol');
 		// map = game.add.tilemap();
 		// map.addTilesetImage('sol');
 

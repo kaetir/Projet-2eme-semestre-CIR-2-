@@ -5,7 +5,7 @@ var main_menu = {
     Ed      : {},   
 
     create : function(){
-        game.add.tileSprite(0, 0, 800, 600, 'background'); 
+        game.add.tileSprite(0, 0, 1152, 648, 'background'); 
         
         /*
         description : passe en plein ecran
