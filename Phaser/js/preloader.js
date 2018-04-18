@@ -17,9 +17,10 @@ function preload () {
 
 		/*Affichage du sprite de la barre de chargement*/
 		if(cacheKey == "background"){	
-			game.add.tileSprite(0, 0, 1152, 648, 'background'); 
+			game.add.tileSprite(0, 0, 1152, 648, 'background');
+			barre_vide.z = 10;
+			barre_pleine.z = 10;
 		}
-		
 		if(cacheKey == "load_bar_vide"){
 			barre_vide = game.add.sprite(game.world.centerX -250,game.world.centerY, "load_bar_vide");
 		}
@@ -27,6 +28,7 @@ function preload () {
 			barre_pleine = game.add.sprite(game.world.centerX - 250,game.world.centerY, "load_bar_pleine");
 			game.load.setPreloadSprite(barre_pleine);
 		}
+		
     	if(cacheKey == "boutons"){ //mettre ici la desnière ressource chargé	
     		barre_vide.destroy();
     		barre_pleine.destroy();
