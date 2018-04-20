@@ -100,48 +100,38 @@ define(["coups","game"], function(coup,game){
 
 				/*Affectation des variables last_turn et last_last_turn selon le tour en cour.*/
 
-				if(game.tour > 1){
-					var last_turn = this.memoire.filter(coup=>coup.tour == game.tour-1)
-					if(game.tour > 2){
-						var last_last_turn = this.memoire.filter(coup=>coup.tour == game.tour-2)
-					}
+
+				if(game.tour == 0){
+					/*Premier échange avec l'individu.*/
+					return true;
 				}
 
-				/*Premier échange avec l'individu.*/
+				if(game.tour == 1){
+					/*Deuxième échange avec l'individu.*/
+					return false;
+				}	
 
+				var last_turn = this.memoire.filter(coup=>coup.tour == game.tour-1	).filter(coup => coup.id == perso.id)[0]["recu"];
+				var last_last_turn = this.memoire.filter(coup=>coup.tour == game.tour-2).filter(coup => coup.id == perso.id)[0]["recu"];
+
+				/*Après le deuxième tour, le manipulateur fait des choix adaptatifs.*/
+				return last_turn && last_last_turn;
+
+				break;
+			}
+			case "Suceptible":{
+				/*Liste d'échanges: COOP >> ADAPTATION >> ADAPTATION*/
+
+				/*Premier échange de l'individu.*/
 				if(this.memoire_is_empty() == true){
 					return true;
 				}
-				else{
-					if(game.tour == 1){/*Deuxième échange avec l'individu.*/
-						return false;
-				}
-				/*Après le deuxième tour, le manipulateur fait des choix adaptatifs.*/
 
-				else{
-					if(last_turn == true && last_last_turn == true){
-						return false;
-					}
-					else{
-						return true;
-					}
-				}
-			}
-			break;
-		}
-		case "Suceptible":{
-			/*Liste d'échanges: COOP >> ADAPTATION >> ADAPTATION*/
-
-			/*Premier échange de l'individu.*/
-			if(this.memoire_is_empty() == true){
-				return true;
-			}
-
-			/*Reste des échanges avec l'individu.*/
-			else if(this.TRIGERED.includes(perso.id)){/*On teste si l'id du perso se trouve dans le tableau TRIGERED*/
+				/*Reste des échanges avec l'individu.*/
+				else if(this.TRIGERED.includes(perso.id)){/*On teste si l'id du perso se trouve dans le tableau TRIGERED*/
 				//console.log(this.nom + " nike la mere de " + perso.nom);
-				return false;
-			}
+			return false;
+		}
 		else{
 			return true;
 		}
