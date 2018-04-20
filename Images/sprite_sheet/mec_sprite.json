@@ -6,7 +6,7 @@
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":180,"y":298,"w":279,"h":522},
-	"sourceSize": {"w":744,"h":1052}
+	"sourceSize": {"w":279,"h":522}
 },
 {
 	"filename": "mec-1.png",
@@ -14,7 +14,7 @@
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":180,"y":298,"w":279,"h":513},
-	"sourceSize": {"w":744,"h":1052}
+	"sourceSize": {"w":279,"h":522}
 },
 {
 	"filename": "mec-2.png",
@@ -22,7 +22,7 @@
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":179,"y":298,"w":280,"h":507},
-	"sourceSize": {"w":744,"h":1052}
+	"sourceSize": {"w":279,"h":522}
 },
 {
 	"filename": "mec-3.png",
@@ -30,7 +30,7 @@
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":177,"y":298,"w":284,"h":497},
-	"sourceSize": {"w":744,"h":1052}
+	"sourceSize": {"w":279,"h":522}
 },
 {
 	"filename": "mec-4.png",
@@ -38,7 +38,7 @@
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":177,"y":298,"w":284,"h":486},
-	"sourceSize": {"w":744,"h":1052}
+	"sourceSize": {"w":279,"h":522}
 },
 {
 	"filename": "mec-5.png",
@@ -46,7 +46,7 @@
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":178,"y":298,"w":284,"h":479},
-	"sourceSize": {"w":744,"h":1052}
+	"sourceSize": {"w":279,"h":522}
 },
 {
 	"filename": "mec-6.png",
@@ -54,7 +54,7 @@
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":177,"y":298,"w":284,"h":486},
-	"sourceSize": {"w":744,"h":1052}
+	"sourceSize": {"w":279,"h":522}
 },
 {
 	"filename": "mec-7.png",
@@ -62,7 +62,7 @@
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":177,"y":298,"w":284,"h":497},
-	"sourceSize": {"w":744,"h":1052}
+	"sourceSize": {"w":279,"h":522}
 },
 {
 	"filename": "mec-8.png",
@@ -70,7 +70,7 @@
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":179,"y":298,"w":280,"h":507},
-	"sourceSize": {"w":744,"h":1052}
+	"sourceSize": {"w":279,"h":522}
 },
 {
 	"filename": "mec-9.png",
@@ -78,7 +78,7 @@
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":180,"y":298,"w":279,"h":513},
-	"sourceSize": {"w":744,"h":1052}
+	"sourceSize": {"w":279,"h":522}
 }],
 "meta": {
 	"app": "https://www.codeandweb.com/texturepacker",
