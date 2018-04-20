@@ -39,15 +39,23 @@ var main_menu = {
     },
 
     vraiMenu : function(){
-        var Billy = game.add.sprite(25,100,"bosseur");
-        var Teemo = game.add.sprite(225,100,"gaffeur");
-        var Jeanne = game.add.sprite(425,100,"susceptible");
-        var Ed = game.add.sprite(625,100,"manipulateur");
+        var Billy = game.add.sprite(game.world.centerX,game.world.centerY,"bosseur");
+        var Teemo = game.add.sprite(game.world.centerX,game.world.centerY,"gaffeur");
+        var Jeanne = game.add.sprite(game.world.centerX,game.world.centerY,"susceptible");
+        var Ed = game.add.sprite(game.world.centerX,game.world.centerY,"manipulateur");
+
+
+        Billy.anchor.setTo(.5);
+        Teemo.anchor.setTo(.5);
+        Jeanne.anchor.setTo(.5);
+        Ed.anchor.setTo(.5);
+
 
         Billy.scale.setTo(0.5,0.5);
         Teemo.scale.setTo(0.5,0.5);
-        Jeanne.scale.setTo(0.5,0.5)
+        Jeanne.scale.setTo(0.5,0.5);
         Ed.scale.setTo(0.5,0.5);
+
 
         Billy.animations.add('jump');
         Billy.animations.play('jump', 12, true);
@@ -95,6 +103,7 @@ var main_menu = {
         function startHistory (){
 
         };
+
     }
 
 
