@@ -5,80 +5,80 @@
 	"frame": {"x":1,"y":1,"w":291,"h":539},
 	"rotated": false,
 	"trimmed": true,
-	"spriteSourceSize": {"x":0,"y":0,"w":291,"h":539},
-	"sourceSize": {"w":292,"h":530}
+	"spriteSourceSize": {"x":168,"y":281,"w":291,"h":539},
+	"sourceSize": {"w":291,"h":539}
 },
 {
 	"filename": "meuf-1.png",
 	"frame": {"x":294,"y":1,"w":291,"h":530},
 	"rotated": false,
 	"trimmed": true,
-	"spriteSourceSize": {"x":0,"y":0,"w":291,"h":530},
-	"sourceSize": {"w":292,"h":530}
+	"spriteSourceSize": {"x":168,"y":281,"w":291,"h":530},
+	"sourceSize": {"w":291,"h":539}
 },
 {
 	"filename": "meuf-2.png",
 	"frame": {"x":587,"y":1,"w":291,"h":524},
 	"rotated": false,
 	"trimmed": true,
-	"spriteSourceSize": {"x":0,"y":0,"w":291,"h":524},
-	"sourceSize": {"w":292,"h":530}
+	"spriteSourceSize": {"x":168,"y":281,"w":291,"h":524},
+	"sourceSize": {"w":291,"h":539}
 },
 {
 	"filename": "meuf-3.png",
 	"frame": {"x":592,"y":527,"w":293,"h":514},
 	"rotated": false,
 	"trimmed": true,
-	"spriteSourceSize": {"x":0,"y":0,"w":293,"h":514},
-	"sourceSize": {"w":292,"h":530}
+	"spriteSourceSize": {"x":168,"y":281,"w":293,"h":514},
+	"sourceSize": {"w":291,"h":539}
 },
 {
 	"filename": "meuf-4.png",
 	"frame": {"x":297,"y":533,"w":293,"h":503},
 	"rotated": false,
 	"trimmed": true,
-	"spriteSourceSize": {"x":0,"y":0,"w":293,"h":503},
-	"sourceSize": {"w":292,"h":530}
+	"spriteSourceSize": {"x":168,"y":281,"w":293,"h":503},
+	"sourceSize": {"w":291,"h":539}
 },
 {
 	"filename": "meuf-5.png",
 	"frame": {"x":1,"y":542,"w":294,"h":496},
 	"rotated": false,
 	"trimmed": true,
-	"spriteSourceSize": {"x":0,"y":0,"w":294,"h":496},
-	"sourceSize": {"w":292,"h":530}
+	"spriteSourceSize": {"x":168,"y":281,"w":294,"h":496},
+	"sourceSize": {"w":291,"h":539}
 },
 {
 	"filename": "meuf-6.png",
 	"frame": {"x":297,"y":533,"w":293,"h":503},
 	"rotated": false,
 	"trimmed": true,
-	"spriteSourceSize": {"x":0,"y":0,"w":293,"h":503},
-	"sourceSize": {"w":292,"h":530}
+	"spriteSourceSize": {"x":168,"y":281,"w":293,"h":503},
+	"sourceSize": {"w":291,"h":539}
 },
 {
 	"filename": "meuf-7.png",
 	"frame": {"x":592,"y":527,"w":293,"h":514},
 	"rotated": false,
 	"trimmed": true,
-	"spriteSourceSize": {"x":0,"y":0,"w":293,"h":514},
-	"sourceSize": {"w":292,"h":530}
+	"spriteSourceSize": {"x":168,"y":281,"w":293,"h":514},
+	"sourceSize": {"w":291,"h":539}
 },
 {
 	"filename": "meuf-8.png",
 	"frame": {"x":587,"y":1,"w":291,"h":524},
 	"rotated": false,
 	"trimmed": true,
-	"spriteSourceSize": {"x":0,"y":0,"w":291,"h":524},
-	"sourceSize": {"w":292,"h":530}
+	"spriteSourceSize": {"x":168,"y":281,"w":291,"h":524},
+	"sourceSize": {"w":291,"h":539}
 },
 {
 	"filename": "meuf-9.png",
 	"frame": {"x":294,"y":1,"w":291,"h":530},
 	"rotated": false,
 	"trimmed": true,
-	"spriteSourceSize": {"x":0,"y":0,"w":291,"h":530},
-	"sourceSize": {"w":292,"h":530}
+	"spriteSourceSize": {"x":168,"y":281,"w":291,"h":530},
+	"sourceSize": {"w":291,"h":539}
 }],
 "meta": {
 	"app": "https://www.codeandweb.com/texturepacker",

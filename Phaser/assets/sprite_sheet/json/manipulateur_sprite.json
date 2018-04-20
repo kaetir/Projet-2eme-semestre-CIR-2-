@@ -5,80 +5,80 @@
 	"frame": {"x":287,"y":1,"w":279,"h":537},
 	"rotated": false,
 	"trimmed": true,
-	"spriteSourceSize": {"x":0,"y":0,"w":279,"h":537},
-	"sourceSize": {"w":744,"h":1052}
+	"spriteSourceSize": {"x":180,"y":283,"w":279,"h":537},
+	"sourceSize": {"w":279,"h":537}
 },
 {
 	"filename": "Manipulateur-1.png",
 	"frame": {"x":568,"y":1,"w":279,"h":528},
 	"rotated": false,
 	"trimmed": true,
-	"spriteSourceSize": {"x":0,"y":0,"w":279,"h":528},
-	"sourceSize": {"w":744,"h":1052}
+	"spriteSourceSize": {"x":180,"y":283,"w":279,"h":528},
+	"sourceSize": {"w":279,"h":537}
 },
 {
 	"filename": "Manipulateur-2.png",
 	"frame": {"x":1,"y":515,"w":280,"h":522},
 	"rotated": false,
 	"trimmed": true,
-	"spriteSourceSize": {"x":-1,"y":0,"w":280,"h":522},
-	"sourceSize": {"w":744,"h":1052}
+	"spriteSourceSize": {"x":179,"y":283,"w":280,"h":522},
+	"sourceSize": {"w":279,"h":537}
 },
 {
 	"filename": "Manipulateur-3.png",
 	"frame": {"x":1,"y":1,"w":284,"h":512},
 	"rotated": false,
 	"trimmed": true,
-	"spriteSourceSize": {"x":-3,"y":0,"w":284,"h":512},
-	"sourceSize": {"w":744,"h":1052}
+	"spriteSourceSize": {"x":177,"y":283,"w":284,"h":512},
+	"sourceSize": {"w":279,"h":537}
 },
 {
 	"filename": "Manipulateur-4.png",
 	"frame": {"x":569,"y":531,"w":284,"h":501},
 	"rotated": false,
 	"trimmed": true,
-	"spriteSourceSize": {"x":-3,"y":0,"w":284,"h":501},
-	"sourceSize": {"w":744,"h":1052}
+	"spriteSourceSize": {"x":177,"y":283,"w":284,"h":501},
+	"sourceSize": {"w":279,"h":537}
 },
 {
 	"filename": "Manipulateur-5.png",
 	"frame": {"x":283,"y":540,"w":284,"h":494},
 	"rotated": false,
 	"trimmed": true,
-	"spriteSourceSize": {"x":-2,"y":0,"w":284,"h":494},
-	"sourceSize": {"w":744,"h":1052}
+	"spriteSourceSize": {"x":178,"y":283,"w":284,"h":494},
+	"sourceSize": {"w":279,"h":537}
 },
 {
 	"filename": "Manipulateur-6.png",
 	"frame": {"x":569,"y":531,"w":284,"h":501},
 	"rotated": false,
 	"trimmed": true,
-	"spriteSourceSize": {"x":-3,"y":0,"w":284,"h":501},
-	"sourceSize": {"w":744,"h":1052}
+	"spriteSourceSize": {"x":177,"y":283,"w":284,"h":501},
+	"sourceSize": {"w":279,"h":537}
 },
 {
 	"filename": "Manipulateur-7.png",
 	"frame": {"x":1,"y":1,"w":284,"h":512},
 	"rotated": false,
 	"trimmed": true,
-	"spriteSourceSize": {"x":-3,"y":0,"w":284,"h":512},
-	"sourceSize": {"w":744,"h":1052}
+	"spriteSourceSize": {"x":177,"y":283,"w":284,"h":512},
+	"sourceSize": {"w":279,"h":537}
 },
 {
 	"filename": "Manipulateur-8.png",
 	"frame": {"x":1,"y":515,"w":280,"h":522},
 	"rotated": false,
 	"trimmed": true,
-	"spriteSourceSize": {"x":-1,"y":0,"w":280,"h":522},
-	"sourceSize": {"w":744,"h":1052}
+	"spriteSourceSize": {"x":179,"y":283,"w":280,"h":522},
+	"sourceSize": {"w":279,"h":537}
 },
 {
 	"filename": "Manipulateur-9.png",
 	"frame": {"x":568,"y":1,"w":279,"h":528},
 	"rotated": false,
 	"trimmed": true,
-	"spriteSourceSize": {"x":0,"y":0,"w":279,"h":528},
-	"sourceSize": {"w":744,"h":1052}
+	"spriteSourceSize": {"x":180,"y":283,"w":279,"h":528},
+	"sourceSize": {"w":279,"h":537}
 }],
 "meta": {
 	"app": "https://www.codeandweb.com/texturepacker",

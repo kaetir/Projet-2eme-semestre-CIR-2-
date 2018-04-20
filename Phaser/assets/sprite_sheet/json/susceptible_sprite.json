@@ -5,80 +5,80 @@
 	"frame": {"x":287,"y":1,"w":279,"h":516},
 	"rotated": false,
 	"trimmed": true,
-	"spriteSourceSize": {"x":0,"y":0,"w":279,"h":516},
-	"sourceSize": {"w":744,"h":1052}
+	"spriteSourceSize": {"x":180,"y":304,"w":279,"h":516},
+	"sourceSize": {"w":279,"h":516}
 },
 {
 	"filename": "Susceptible-1.png",
 	"frame": {"x":1,"y":494,"w":279,"h":507},
 	"rotated": false,
 	"trimmed": true,
-	"spriteSourceSize": {"x":0,"y":0,"w":279,"h":507},
-	"sourceSize": {"w":744,"h":1052}
+	"spriteSourceSize": {"x":180,"y":304,"w":279,"h":507},
+	"sourceSize": {"w":279,"h":516}
 },
 {
 	"filename": "Susceptible-2.png",
 	"frame": {"x":568,"y":1,"w":280,"h":501},
 	"rotated": false,
 	"trimmed": true,
-	"spriteSourceSize": {"x":-1,"y":0,"w":280,"h":501},
-	"sourceSize": {"w":744,"h":1052}
+	"spriteSourceSize": {"x":179,"y":304,"w":280,"h":501},
+	"sourceSize": {"w":279,"h":516}
 },
 {
 	"filename": "Susceptible-3.png",
 	"frame": {"x":1,"y":1,"w":284,"h":491},
 	"rotated": false,
 	"trimmed": true,
-	"spriteSourceSize": {"x":-3,"y":0,"w":284,"h":491},
-	"sourceSize": {"w":744,"h":1052}
+	"spriteSourceSize": {"x":177,"y":304,"w":284,"h":491},
+	"sourceSize": {"w":279,"h":516}
 },
 {
 	"filename": "Susceptible-4.png",
 	"frame": {"x":282,"y":519,"w":284,"h":480},
 	"rotated": false,
 	"trimmed": true,
-	"spriteSourceSize": {"x":-3,"y":0,"w":284,"h":480},
-	"sourceSize": {"w":744,"h":1052}
+	"spriteSourceSize": {"x":177,"y":304,"w":284,"h":480},
+	"sourceSize": {"w":279,"h":516}
 },
 {
 	"filename": "Susceptible-5.png",
 	"frame": {"x":568,"y":504,"w":284,"h":473},
 	"rotated": false,
 	"trimmed": true,
-	"spriteSourceSize": {"x":-2,"y":0,"w":284,"h":473},
-	"sourceSize": {"w":744,"h":1052}
+	"spriteSourceSize": {"x":178,"y":304,"w":284,"h":473},
+	"sourceSize": {"w":279,"h":516}
 },
 {
 	"filename": "Susceptible-6.png",
 	"frame": {"x":282,"y":519,"w":284,"h":480},
 	"rotated": false,
 	"trimmed": true,
-	"spriteSourceSize": {"x":-3,"y":0,"w":284,"h":480},
-	"sourceSize": {"w":744,"h":1052}
+	"spriteSourceSize": {"x":177,"y":304,"w":284,"h":480},
+	"sourceSize": {"w":279,"h":516}
 },
 {
 	"filename": "Susceptible-7.png",
 	"frame": {"x":1,"y":1,"w":284,"h":491},
 	"rotated": false,
 	"trimmed": true,
-	"spriteSourceSize": {"x":-3,"y":0,"w":284,"h":491},
-	"sourceSize": {"w":744,"h":1052}
+	"spriteSourceSize": {"x":177,"y":304,"w":284,"h":491},
+	"sourceSize": {"w":279,"h":516}
 },
 {
 	"filename": "Susceptible-8.png",
 	"frame": {"x":568,"y":1,"w":280,"h":501},
 	"rotated": false,
 	"trimmed": true,
-	"spriteSourceSize": {"x":-1,"y":0,"w":280,"h":501},
-	"sourceSize": {"w":744,"h":1052}
+	"spriteSourceSize": {"x":179,"y":304,"w":280,"h":501},
+	"sourceSize": {"w":279,"h":516}
 },
 {
 	"filename": "Susceptible-9.png",
 	"frame": {"x":1,"y":494,"w":279,"h":507},
 	"rotated": false,
 	"trimmed": true,
-	"spriteSourceSize": {"x":0,"y":0,"w":279,"h":507},
-	"sourceSize": {"w":744,"h":1052}
+	"spriteSourceSize": {"x":180,"y":304,"w":279,"h":507},
+	"sourceSize": {"w":279,"h":516}
 }],
 "meta": {
 	"app": "https://www.codeandweb.com/texturepacker",
