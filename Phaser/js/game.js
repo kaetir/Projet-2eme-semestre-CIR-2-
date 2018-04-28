@@ -14,7 +14,7 @@ var leJeu = {
 
 		LaTabola = game.add.sprite(300,500,"table");
 		Billy =  game.add.sprite(500,300,"bosseur");
-		femelle = game.add.sprite(0,200, "meuf" );
+		femelle = game.add.sprite(0,500, "meuf" );
 	
 
 		femelle.scale.setTo(0.5,0.5);

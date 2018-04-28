@@ -1,10 +1,11 @@
 var main_menu = {
     Logo : {},
-    point : {},
-    
+    persos : {},
+
     create : function(){
         game.add.tileSprite(0, 0, 1152, 648, 'background'); 
         
+
         /*
         description : passe en plein ecran
         argument : none
@@ -19,14 +20,17 @@ var main_menu = {
             }
         };
 
-        var Logo = game.add.sprite(game.world.centerX, game.world.centerY , "logo");
+
+        Logo = game.add.sprite(game.world.centerX, game.world.centerY , "logo");
         Logo.scale.setTo(0.7,0.7);
         Logo.anchor.setTo(0.5,0.8);
+
+        // passage en plein écran
         var startingButton = game.add.button(game.world.centerX, game.world.centerY ,"boutons" , ()=>{
             // a remettre pour les release
             //gofull();
             startingButton.destroy();
-            Logo.destroy();
+            //Logo.destroy();
             this.vraiMenu();
         },this); 
         startingButton.scale.setTo(0.5,0.5);
@@ -34,20 +38,25 @@ var main_menu = {
 
         startingButton.setFrames(17,15,16);
 
-        point = new Phaser.Point(game.world.centerX,game.world.centerY);
-        
+
+
+
     },
 
 
     vraiMenu : function(){
 
-        var persos = game.add.group();
+        Logo.scale.setTo(0.5);
+        Logo.anchor.setTo(0.5,1.2);
 
-        persos.create(game.world.centerX-300,game.world.centerY,"bosseur");
-        persos.create(game.world.centerX-150,game.world.centerY,"gaffeur");
-        persos.create(game.world.centerX+150,game.world.centerY,"susceptible");
-        persos.create(game.world.centerX+300,game.world.centerY,"manipulateur");
 
+        persos = game.add.group();
+
+        persos.create(game.world.centerX-300*3,game.world.centerY,"bosseur");
+        persos.create(game.world.centerX-150*3,game.world.centerY,"gaffeur");
+        persos.create(game.world.centerX+150*3,game.world.centerY,"susceptible");
+        persos.create(game.world.centerX+300*3,game.world.centerY,"manipulateur");
+        
         
         persos.scale.setTo(0.5);
         persos.callAll("anchor.setTo",0.5);
@@ -55,10 +64,14 @@ var main_menu = {
 
         persos.forEach((perso)=>{
             perso.animations.add('jump');
+            perso.anchor.setTo(-1.5 ,0);
         })
         
         persos.callAll('animations.play', 'animations', 'jump', 12, true);
 
+        persos.forEach((perso,index)=>{
+            game.debug.spriteInfo(perso,32,32*(index+1));
+        })
 
         
         var arcade = game.add.button(game.world.centerX - 250 - 100, game.world.centerY +100 ,"boutons", startArcade, this);
@@ -84,6 +97,8 @@ var main_menu = {
             game.state.add("game", leJeu);
             game.state.start('game');
         };
+
+
         /*
         description : nettoie la scene et lance le mode histoire
         argument : none
@@ -96,8 +111,8 @@ var main_menu = {
 
     },
 
-    render : function(){
-        game.debug.geom(point, 'rgb(255,0,0)');
+    render : ()=>{
+
     }
 
 
