@@ -13,11 +13,13 @@ var leJeu = {
 
 
 		LaTabola = game.add.sprite(300,500,"table");
-		Billy =  game.add.sprite(500,320,"bosseur");
-		femelle = game.add.sprite(0,370, "meuf" );
+		Billy =  game.add.sprite(500,300,"bosseur");
+		femelle = game.add.sprite(0,200, "meuf" );
 	
 
 		femelle.scale.setTo(0.5,0.5);
+		game.camera.follow(femelle);
+
 		Billy.scale.setTo(0.5,0.5);
 		LaTabola.scale.setTo(0.5,0.5);	
 
@@ -37,13 +39,17 @@ var leJeu = {
 
 
 		Billy.body.onCollide = new Phaser.Signal();
-		Billy.body.onCollide.add(hitSprite, this);
+		Billy.body.onCollide.add(hitPeople, this);
 
 		ELLESUCE = false;
-		function hitSprite (sprite1, sprite2) {
+		function hitPeople (sprite1, sprite2) {
 			if(!ELLESUCE)
-				if(confirm("COOP ?")){
-					ELLESUCE = true;
+				var text = "T'es bonne femmelle\n tu veux boire un café";
+   				var style = { font: "65px Arial", fill: "#ff0044", align: "center" };
+
+    			var t = game.add.text(game.world.centerX-300, 0, text, style);
+    			if(!ELLESUCE){
+    				ELLESUCE = true;
 					Billy.body.collideWorldBounds = false;
 				}
 		}
@@ -72,10 +78,11 @@ var leJeu = {
 		game.physics.arcade.collide(femelle, LaTabola);
 	},
 	render : function(){
-		// game.debug.bodyInfo(Billy, 32, 32);
-		// game.debug.body(femelle);
-		// game.debug.body(Billy);
-		
+		//game.debug.bodyInfo(Billy, 32, 32);
+		game.debug.body(femelle);
+		game.debug.body(Billy);
+		game.debug.cameraInfo(game.camera, 32, 32);
+    	game.debug.spriteCoords(femelle, 32, 500);
 
 	} 
 }
