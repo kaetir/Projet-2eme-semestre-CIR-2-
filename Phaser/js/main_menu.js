@@ -1,9 +1,5 @@
 var main_menu = {
-    Billy   : {},
-    Teemo   : {},
-    Jeanne  : {},
-    Ed      : {},   
-
+    
     create : function(){
         game.add.tileSprite(0, 0, 1152, 648, 'background'); 
         
@@ -24,51 +20,45 @@ var main_menu = {
         var Logo = game.add.sprite(game.world.centerX, game.world.centerY , "logo");
         Logo.scale.setTo(0.7,0.7);
         Logo.anchor.setTo(0.5,0.8);
-        var startingButton = game.add.button(game.world.centerX, game.world.centerY ,"boutons", ()=>{
-            gofull();
+        var startingButton = game.add.button(game.world.centerX, game.world.centerY ,"boutons" , ()=>{
+            // a remettre pour les release
+            //gofull();
             startingButton.destroy();
             Logo.destroy();
             this.vraiMenu();
-        }, this);
+        },this); 
         startingButton.scale.setTo(0.5,0.5);
         startingButton.anchor.setTo(0.5,-0.5);
 
-        startingButton.setFrames(2,0,1);
+        startingButton.setFrames(17,15,16);
 
 
     },
 
     vraiMenu : function(){
-        var Billy = game.add.sprite(game.world.centerX,game.world.centerY,"bosseur");
-        var Teemo = game.add.sprite(game.world.centerX,game.world.centerY,"gaffeur");
-        var Jeanne = game.add.sprite(game.world.centerX,game.world.centerY,"susceptible");
-        var Ed = game.add.sprite(game.world.centerX,game.world.centerY,"manipulateur");
+
+        var persos = game.add.group();
+
+        persos.create(game.world.centerX,game.world.centerY,"bosseur");
+        persos.create(game.world.centerX,game.world.centerY,"gaffeur");
+        persos.create(game.world.centerX,game.world.centerY,"susceptible");
+        persos.create(game.world.centerX,game.world.centerY,"manipulateur");
+
+        
+        persos.scale.setTo(0.5,0.5);
+        
+        persos.forEach((item,index)=>{
+            item.anchor.setTo(0.5,0.5) 
+        });
+        
+        persos.forEach((perso)=>{
+            perso.animations.add('jump');
+        })
+            
+        persos.callAll('animations.play', 'animations', 'jump', 12, true);
 
 
-        Billy.anchor.setTo(.5);
-        Teemo.anchor.setTo(.5);
-        Jeanne.anchor.setTo(.5);
-        Ed.anchor.setTo(.5);
-
-
-        Billy.scale.setTo(0.5,0.5);
-        Teemo.scale.setTo(0.5,0.5);
-        Jeanne.scale.setTo(0.5,0.5);
-        Ed.scale.setTo(0.5,0.5);
-
-
-        Billy.animations.add('jump');
-        Billy.animations.play('jump', 12, true);
-
-        Teemo.animations.add('jump');
-        Teemo.animations.play('jump', 12, true);
-
-        Jeanne.animations.add('jump');
-        Jeanne.animations.play('jump', 12, true);
-
-        Ed.animations.add('jump');
-        Ed.animations.play('jump', 12, true);
-
+        
         var arcade = game.add.button(game.world.centerX - 250 - 100, game.world.centerY +100 ,"boutons", startArcade, this);
         arcade.scale.setTo(0.5,0.5);
         arcade.setFrames(2,0,1);
@@ -86,10 +76,7 @@ var main_menu = {
         return : none
         */
         function startArcade (){
-            Billy.destroy();
-            Teemo.destroy();
-            Jeanne.destroy();
-            Ed.destroy();
+            persos.destroy();
             histoire.destroy();
             arcade.destroy();
             game.state.add("game", leJeu);
@@ -103,6 +90,7 @@ var main_menu = {
         function startHistory (){
 
         };
+
 
     }
 
