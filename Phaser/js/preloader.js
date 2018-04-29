@@ -52,6 +52,7 @@ function load() {
 	game.load.atlas('mec', 'assets/sprite_sheet/mec_sprite.png', 'assets/sprite_sheet/json/mec_sprite.json', Phaser.Loader.TEXTURE_ATLAS_JSON_HASH);
 	game.load.atlas('meuf', 'assets/sprite_sheet/meuf_sprite.png', 'assets/sprite_sheet/json/meuf_sprite.json', Phaser.Loader.TEXTURE_ATLAS_JSON_HASH);
 	game.load.image("table", "assets/table.png");
+	game.load.image("fenetre", "assets/rencontre.png");
 	game.load.image("sol", "assets/background/sol_32x32.png");
 	
 	game.load.atlas('boutons', 'assets/sprite_sheet/boutons_sprite.png', 'assets/sprite_sheet/json/boutons_sprite.json', Phaser.Loader.TEXTURE_ATLAS_JSON_HASH);
@@ -60,8 +61,10 @@ function load() {
 };
 
 function create() {
-	game.physics.startSystem(Phaser.Physics.ARCADE);
-	//game.physics.startSystem(Phaser.Physics.p2JS);
+	// game.physics.startSystem(Phaser.Physics.ARCADE);
+	game.physics.startSystem(Phaser.Physics.P2JS);
+	
+
 	// Stretch to fill
 	game.scale.fullScreenScaleMode = Phaser.ScaleManager.EXACT_FIT;
 	
