@@ -1,4 +1,5 @@
 
+var style = { font: "65px Arial", fill: "#ff0044", align: "center" };
 
 var leJeu = {
 
@@ -7,62 +8,88 @@ var leJeu = {
 	LaTabola : {},
 	fenetreInteraction : {},
 	cursors : {},
+	cooperate : false,
+	ELLESUCE : false,
 
 	create : function(){
-		game.add.tileSprite(0, 0, 1920, 548, 'background');
-		game.add.tileSprite(0,548,1920,300,'sol');
-		game.world.setBounds(0, 0, 1920, 748);
-
-		fenetreInteraction = game.add.sprite(game.camera.x+game.width/2,game.camera.y+game.height/2,"fenetre");
-		fenetreInteraction.alpha = 0;
-		fenetreInteraction.scale.setTo(0.85);
-		fenetreInteraction.anchor.setTo(0.5,0.5);
-
-		fenetreInteraction.fixedToCamera = true;
+		game.add.tileSprite(0, 0, 2500, 548, 'background');
+		game.add.tileSprite(0,548,2500,300,'sol');
+		game.world.setBounds(0, 0, 2500, 748);
 
 		LaTabola = game.add.sprite(300,500,"table");
-		Billy =  game.add.sprite(500,300,"bosseur");
+		Billy =  game.add.sprite(560,450,"bosseur");
+		Jeanne =  game.add.sprite(1500,450,"susceptible");
+		PUTE404 =  game.add.sprite(2000,450,"gaffeur");
 		Femelle = game.add.sprite(0,500, "meuf" );
 
 
 		Femelle.scale.setTo(0.5);
 		Billy.scale.setTo(0.5);
+		Jeanne.scale.setTo(0.5);
+		PUTE404.scale.setTo(0.5);
 		LaTabola.scale.setTo(0.5);	
 
 
 		Femelle.animations.add('jump');
+		PUTE404.animations.add('jump');
+		PUTE404.animations.play('jump',15, true);
 
-		game.physics.p2.enable([Femelle,Billy],false);
+		game.physics.p2.enable([Femelle,Billy,Jeanne,PUTE404],false);
 
 		Femelle.body.fixedRotation = true;
-		Billy.body.fixedRotation = true;
+		Billy.body.static = true;
+		Jeanne.body.static = true;
+		PUTE404.body.moveRight(200);
 
 		Femelle.body.onBeginContact.add(blockHit, this);
 
-		ELLESUCE = false;
-
+		/*
+		description : fonction de gestion des colision de la femmelle
+		argument : RTFM
+		return : null
+		*/
 		function blockHit (body, bodyB, shapeA, shapeB, equation) {
- 		   	//  This callback is sent 5 arguments:
 
-    		//  The Phaser.Physics.P2.Body it is in contact with. *This might be null* if the Body was created directly in the p2 world.
-    		//  The p2.Body this Body is in contact with.
-    		//  The Shape from this body that caused the contact.
-    		//  The Shape from the contact body.
-    		//  The Contact Equation data array.
-    	
     		//  The first argument may be null or not have a sprite property, such as when you hit the world bounds.
     		if (body){
-    			if(!ELLESUCE){
+    			body.removeNextStep = true;
+    			if(!this.sELLESUCE){
     			//remplacer le texte si dessous par un text de demande coop
-    			fenetreInteraction.alpha = 1;
-    			fenetreInteraction.bringToTop();
-    			var text = "T'es bonne femmelle\n tu veux boire un café";
-    			var style = { font: "65px Arial", fill: "#ff0044", align: "center" };
+    			var text = "T'as des grosses mamelles\n tu veux boire un café";
+		
+    			fenetreInteraction = game.add.sprite(game.width/2,game.camera.y+game.height/2-100,"fenetre");
+				fenetreInteraction.scale.setTo(0.85);
+				fenetreInteraction.anchor.setTo(0.5);
+				fenetreInteraction.fixedToCamera = true;
+		    			
 
-	    		var t = game.add.text(game.camera.x+game.width/2, game.camera.y+50, text, style);
-	    		t.anchor.setTo(0.5);
+	    		var t = fenetreInteraction.addChild(game.make.text(-game.camera.x, 0, text, style));
+	    		t.anchor.setTo(0.5,2);
 	    		t.fixedToCamera = true;
-	    		ELLESUCE = true;
+
+	    		var coop = fenetreInteraction.addChild(game.make.button(0,0,"boutons" , ()=>{
+            		fenetreInteraction.destroy();
+	    			this.ELLESUCE = false;
+	    			cooperate = true;
+        		}, this));
+        		coop.setFrames(8,6,7);
+        		coop.scale.setTo(0.5);
+        		coop.x -= coop.width-50;
+        		coop.anchor.setTo(0.5,-1);
+
+
+        		var betray = fenetreInteraction.addChild(game.make.button(0,0,"boutons" , ()=>{
+            		fenetreInteraction.destroy();
+	    			this.ELLESUCE = false;
+	    			cooperate = false;
+        		}, this));
+        		betray.setFrames(5,3,4);
+        		betray.scale.setTo(0.5);
+        		betray.x += betray.width-50;
+        		betray.anchor.setTo(0.5,-1);
+        		
+	    		this.ELLESUCE = true;
+
 				
 				}
     		}
@@ -78,53 +105,45 @@ var leJeu = {
 		update : function() {
 			Femelle.body.setZeroVelocity();
 
-			if (cursors.up.isDown)
-			{
-				if(Femelle.body.y > 430)
-					Femelle.body.moveUp(300)
-			}
-			else if (cursors.down.isDown)
-			{
-				Femelle.body.moveDown(300);
+			if(!this.ELLESUCE){
+
+				if (cursors.up.isDown)
+				{
+					if(Femelle.body.y > 430)
+						Femelle.body.moveUp(300)
+				}
+				else if (cursors.down.isDown)
+				{
+					Femelle.body.moveDown(300);
+				}
+
+				if (cursors.left.isDown)
+				{
+					Femelle.animations.play('jump', 15, false);
+					Femelle.body.velocity.x = -300;
+				}
+				else if (cursors.right.isDown)
+				{
+					Femelle.animations.play('jump', 15, false);
+					Femelle.body.moveRight(300);
+				}
 			}
 
-			if (cursors.left.isDown)
-			{
-				Femelle.animations.play('jump', 15, false);
-				Femelle.body.velocity.x = -300;
+			if(PUTE404.body.x>=2300){			
+				PUTE404.body.setZeroVelocity();
+				PUTE404.body.moveLeft(200);
 			}
-			else if (cursors.right.isDown)
-			{
-				Femelle.animations.play('jump', 15, false);
-				Femelle.body.moveRight(300);
+			else if(PUTE404.body.x<1800){
+				PUTE404.body.setZeroVelocity();
+				PUTE404.body.moveRight(200);
 			}
-		/*
-		//  only move when you click
-		if (game.input.mousePointer.isDown){
-			//  100 is the speed it will move towards the mouse
-			game.physics.arcade.moveToPointer(Femelle, 250);
-			Femelle.body.velocity.y = 0;
-			//  if it's overlapping the mouse, don't move any more
-			if (Phaser.Rectangle.contains(Femelle.body, game.input.x, game.input.y)){
-				Femelle.body.velocity.setTo(0, 0);
-			}else{
-				Femelle.animations.play('jump', 12, false);
-			}
-		}
-		else{
-			Femelle.body.velocity.setTo(0, 0);
-		}
-		*/
-		// if(!ELLESUCE)
-		// 	game.physics.arcade.collide(Femelle, Billy);
-
 	},
 	render : function(){
 		
 		// game.debug.body(Femelle);
 		// game.debug.body(Billy);
 		// game.debug.cameraInfo(game.camera, 32, 32);
-		// game.debug.spriteCoords(Femelle, 32, 500);
+		// game.debug.spriteCoords(PUTE404, 32, 500);
 
 	} 
 }
