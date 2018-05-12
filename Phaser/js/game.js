@@ -56,6 +56,12 @@ var leJeu = {
 
     		//  The first argument may be null or not have a sprite property, such as when you hit the world bounds.
     		if (body){
+    			
+    			var Betray_1 = game.add.audio('Betray_1');
+				var Betray_2 = game.add.audio('Betray_2');
+				var Coop_1 = game.add.audio('Coop_1');
+				var Coop_2 = game.add.audio('Coop_2');
+    			
     			body.removeNextStep = true;
     			body.sprite.animations.stop("jump");
     			if(!this.sELLESUCE){
@@ -76,6 +82,7 @@ var leJeu = {
             		fenetreInteraction.destroy();
 	    			this.ELLESUCE = false;
 	    			cooperate = true;
+	    			Coop_1.play();
         		}, this));
         		coop.setFrames(8,6,7);
         		coop.scale.setTo(0.5);
@@ -87,6 +94,7 @@ var leJeu = {
             		fenetreInteraction.destroy();
 	    			this.ELLESUCE = false;
 	    			cooperate = false;
+	    			Betray_1.play();
         		}, this));
         		betray.setFrames(5,3,4);
         		betray.scale.setTo(0.5);
