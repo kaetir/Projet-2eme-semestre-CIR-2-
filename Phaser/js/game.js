@@ -8,6 +8,7 @@ var leJeu = {
 	LaTabola : {},
 	fenetreInteraction : {},
 	cursors : {},
+	Jour : 0,
 	cooperate : false,
 	ELLESUCE : false,
 
@@ -17,6 +18,7 @@ var leJeu = {
 		game.world.setBounds(0, 0, 2500, 748);
 
 		LaTabola = game.add.sprite(300,500,"table");
+		LaTabola2 = game.add.sprite(1000,500,"table");
 		Billy =  game.add.sprite(560,450,"bosseur");
 		Jeanne =  game.add.sprite(1500,450,"susceptible");
 		PUTE404 =  game.add.sprite(2000,450,"gaffeur");
@@ -28,6 +30,7 @@ var leJeu = {
 		Jeanne.scale.setTo(0.5);
 		PUTE404.scale.setTo(0.5);
 		LaTabola.scale.setTo(0.5);	
+		LaTabola2.scale.setTo(0.5);	
 
 
 		Femelle.animations.add('jump');
@@ -36,11 +39,12 @@ var leJeu = {
 
 		game.physics.p2.enable([Femelle,Billy,Jeanne,PUTE404],false);
 
-		Femelle.body.fixedRotation = true;
 		Billy.body.static = true;
 		Jeanne.body.static = true;
 		PUTE404.body.moveRight(200);
 
+
+		Femelle.body.fixedRotation = true;
 		Femelle.body.onBeginContact.add(blockHit, this);
 
 		/*
@@ -53,6 +57,7 @@ var leJeu = {
     		//  The first argument may be null or not have a sprite property, such as when you hit the world bounds.
     		if (body){
     			body.removeNextStep = true;
+    			body.sprite.animations.stop("jump");
     			if(!this.sELLESUCE){
     			//remplacer le texte si dessous par un text de demande coop
     			var text = "T'as des grosses mamelles\n tu veux boire un café";
@@ -104,28 +109,35 @@ var leJeu = {
 
 		update : function() {
 			Femelle.body.setZeroVelocity();
-
+			var speed = 600; //mettre a 300 hors test
 			if(!this.ELLESUCE){
 
 				if (cursors.up.isDown)
 				{
 					if(Femelle.body.y > 430)
-						Femelle.body.moveUp(300)
+						Femelle.body.moveUp(speed)
 				}
 				else if (cursors.down.isDown)
 				{
-					Femelle.body.moveDown(300);
+					Femelle.body.moveDown(speed);
 				}
 
 				if (cursors.left.isDown)
 				{
 					Femelle.animations.play('jump', 15, false);
-					Femelle.body.velocity.x = -300;
+					Femelle.body.velocity.x = -speed;
 				}
 				else if (cursors.right.isDown)
 				{
+					if(Femelle.x >= 2400){
+						console.log(this.Jour);
+						this.Jour++;
+						game.state.start(game.state.current);
+					}
+					else{
 					Femelle.animations.play('jump', 15, false);
-					Femelle.body.moveRight(300);
+					Femelle.body.moveRight(speed);
+					}
 				}
 			}
 
@@ -140,10 +152,8 @@ var leJeu = {
 	},
 	render : function(){
 		
-		// game.debug.body(Femelle);
-		// game.debug.body(Billy);
 		// game.debug.cameraInfo(game.camera, 32, 32);
-		// game.debug.spriteCoords(PUTE404, 32, 500);
+		game.debug.spriteCoords(Femelle, 32, 500);
 
 	} 
 }
