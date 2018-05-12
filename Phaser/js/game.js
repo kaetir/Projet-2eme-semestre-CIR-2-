@@ -66,7 +66,7 @@ var leJeu = {
     			body.sprite.animations.stop("jump");
     			if(!this.sELLESUCE){
     			//remplacer le texte si dessous par un text de demande coop
-    			var text = "T'as des grosses mamelles\n tu veux boire un café";
+    			var text = "Tu peux m'aider pour le projet ?\n tu veux boire un café ?";
 		
     			fenetreInteraction = game.add.sprite(game.width/2,game.camera.y+game.height/2-100,"fenetre");
 				fenetreInteraction.scale.setTo(0.85);

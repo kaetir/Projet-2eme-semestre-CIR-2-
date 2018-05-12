@@ -77,10 +77,6 @@ function create() {
 	game.scale.fullScreenScaleMode = Phaser.ScaleManager.EXACT_FIT;
 	
 	var current_music = game.add.audio('boden');
-	var Betray_1 = game.add.audio('Betray_1');
-	var Betray_2 = game.add.audio('Betray_2');
-	var Coop_1 = game.add.audio('Coop_1');
-	var Coop_2 = game.add.audio('Coop_2');
 	current_music.play()
 	current_music.loopFull(1);
 
