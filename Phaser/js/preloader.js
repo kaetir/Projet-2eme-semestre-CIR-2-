@@ -64,6 +64,8 @@ function load() {
 	//images
 	game.load.image("table", "assets/table.png");
 	game.load.image("fenetre", "assets/rencontre.png");
+	game.load.image("snack", "assets/machine_snack.png");
+	game.load.image("crayon", "assets/crayon_papier.png");
 	game.load.image("fleche_droite", "assets/fleche_droite.png");
 	game.load.image("fleche_gauche", "assets/fleche_gauche.png");
 	game.load.image("sol", "assets/background/sol_32x32.png");

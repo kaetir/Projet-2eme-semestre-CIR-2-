@@ -28,12 +28,15 @@ var leJeu = {
 
 		LaTabola = game.add.sprite(300,500,"table");
 		LaTabola2 = game.add.sprite(1000,500,"table");
+		snack = game.add.sprite(1370,280,"snack");
+		crayon = game.add.sprite(1055,505,"crayon");
+		
 
 		
 		Billy =  game.add.sprite(560,450,"bosseur");
-		Jeanne =  game.add.sprite(1500,450,"susceptible");
+		Jeanne =  game.add.sprite(1500,480,"susceptible");
 		Teemo =  game.add.sprite(2000,450,"gaffeur");
-		Ed =  game.add.sprite(1300,450,"manipulateur");
+		Ed =  game.add.sprite(1300,470,"manipulateur");
 
 		Femelle = game.add.sprite(0,500, "meuf" );
 
@@ -47,6 +50,9 @@ var leJeu = {
 		
 		LaTabola.scale.setTo(0.5);	
 		LaTabola2.scale.setTo(0.5);	
+		snack.scale.setTo(0.4);	
+		crayon.scale.setTo(0.05);	
+		crayon.angle = 35;	
 
 
 		Femelle.animations.add('jump');
