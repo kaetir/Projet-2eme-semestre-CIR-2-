@@ -102,7 +102,8 @@ var leJeu = {
 				body.sprite.animations.stop("jump");
 				if(!this.sELLESUCE){
 				//remplacer le texte si dessous par un text de demande coop
-				var text = "Tu peux m'aider pour le projet ?\n tu veux boire un café ?";
+				console.log()
+				var text = tabDia[getRandomInt(0,tabDia.length)];
 
 				fenetreInteraction = game.add.sprite(game.width/2,game.camera.y+game.height/2-100,"fenetre");
 				fenetreInteraction.scale.setTo(0.85);
@@ -111,7 +112,7 @@ var leJeu = {
 
 
 				var t = fenetreInteraction.addChild(game.make.text(-game.camera.x, 0, text, style));
-				t.anchor.setTo(0.5,2);
+				t.anchor.setTo(0.5,1.8);
 				t.fixedToCamera = true;
 
 				var coop = fenetreInteraction.addChild(game.make.button(0,0,"boutons" , ()=>{

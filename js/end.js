@@ -16,7 +16,7 @@ var end = {
 			console.log(i.id);
 		}
 
-		var score = "TU ES UN AUTHENTIQUE FILS DE PUTE \n Score : " + game.Game.scorePerso(game.Game.tabJoueur[4]) + "\n Bravo";
+		var score = "Score : " + game.Game.scorePerso(game.Game.tabJoueur[4]) + "\n Bravo \n La confiance c'est très important";
 
 		text = game.add.text(game.world.centerX/2, game.world.centerY-50, score, { font: "bold 32px Arial", fill: "#e54a3b", align : "center" });
     	text.anchor.set(0.5,0.5);

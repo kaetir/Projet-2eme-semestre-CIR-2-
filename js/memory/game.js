@@ -49,16 +49,16 @@ class JEU {
 				return 0;
 			var scoreJ12 = perso1.memoire.filter(trade => trade.id == perso2.id ).map(trade => {
 				if(trade.recu == true && trade.donnee == true){
-					return 2;
+					return 1;
 				} 
 				else if(trade.recu == false && trade.donnee == false){
-					return 0;
+					return -1;
 				}
 				else if(trade.recu == true && trade.donnee == false){
-					return 3;
+					return .5;
 				}
 				else if(trade.recu == false && trade.donnee == true){
-					return -1;
+					return .5;
 				}
 			}).reduce((val,accu) => { return accu+val ;},  0);
 			console.log(perso1.nom + ' a un score avec ' +perso2.nom + " de " + scoreJ12);
@@ -73,16 +73,16 @@ class JEU {
 		scorePerso(perso){
 			return perso.memoire.map(trade => {
 				if(trade.recu == true && trade.donnee == true){
-					return 2;
+					return 1;
 				} 
 				else if(trade.recu == false && trade.donnee == false){
-					return 0;
+					return -1;
 				}
 				else if(trade.recu == true && trade.donnee == false){
-					return 3;
+					return .5;
 				}
 				else if(trade.recu == false && trade.donnee == true){
-					return -1;
+					return .5;
 				}
 			}).reduce((val,accu) => { return accu+val ;},  0);
 		}
