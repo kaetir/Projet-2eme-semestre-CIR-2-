@@ -17,6 +17,8 @@ var leJeu = {
 	Game : new JEU(),
 
 	create : function(){
+		this.ELLESUCE = false;
+
 		var Betray_1 = game.add.audio('Betray_1');
 		var Betray_2 = game.add.audio('Betray_2');
 		var Coop_1 = game.add.audio('Coop_1');
@@ -30,6 +32,9 @@ var leJeu = {
 		LaTabola2 = game.add.sprite(1000,500,"table");
 		snack = game.add.sprite(1370,280,"snack");
 		crayon = game.add.sprite(1055,505,"crayon");
+		aquarium = game.add.sprite(320,410,"aquarium");
+		porte1 = game.add.sprite(-100,165,"porte");
+		porte2 = game.add.sprite(2350,165,"porte");
 		
 
 		
@@ -53,7 +58,9 @@ var leJeu = {
 		snack.scale.setTo(0.4);	
 		crayon.scale.setTo(0.05);	
 		crayon.angle = 35;	
-
+		aquarium.scale.setTo(0.8);	
+		porte1.scale.setTo(0.7);	
+		porte2.scale.setTo(0.7);	
 
 		Femelle.animations.add('jump');
 		Teemo.animations.add('jump');
@@ -116,6 +123,11 @@ var leJeu = {
 					else
 						Coop_2.play();
 
+					if(body.joueur.donneForTrade(game.Game.tabJoueur[4])){
+
+					}else{
+						
+					}
 					game.Game.tabJoueur[4].trade(true,body.joueur,game.Game);
 
 
@@ -135,9 +147,9 @@ var leJeu = {
 						Betray_1.play();
 					else
 						Betray_2.play();
-				
+
 					game.Game.tabJoueur[4].trade(false,body.joueur,game.Game);
-				
+
 
 				}, this));
 				betray.setFrames(5,3,4);
@@ -153,10 +165,11 @@ var leJeu = {
 
 	}
 
-	 
+
 
 	cursors = game.input.keyboard.createCursorKeys();
 	game.camera.follow(Femelle);
+
 
 },
 
@@ -176,21 +189,38 @@ update : function() {
 			{
 				Femelle.body.moveDown(speed);
 			}
-			if (cursors.left.isDown || (game.input.activePointer.leftButton.isDown && game.input.activePointer.x <= this.game.width/4))
+			if (cursors.left.isDown || (game.input.activePointer.leftButton.isDown && game.input.activePointer.x <= this.game.width/4) ||  (game.input.pointer1.isDown && game.input.pointer1.x <= (this.game.width/4) )  )
 			{
 				Femelle.animations.play('jump', 15, false);
 				Femelle.body.velocity.x = -speed;
 			}
-			else if (cursors.right.isDown || (game.input.activePointer.leftButton.isDown && game.input.activePointer.x >= (3*this.game.width/4) ))
+			else if (cursors.right.isDown || (game.input.activePointer.leftButton.isDown && game.input.activePointer.x >= (3*this.game.width/4) ) || (game.input.pointer1.isDown && game.input.pointer1.x >= (3*this.game.width/4) )    )
 			{
-				if(Femelle.x >= 2400){
+				if(Femelle.x >= 2400 && !this.ELLESUCE){
+					this.ELLESUCE = true;
 					game.Game.autoTrade();
 					this.Jour++;
+						var text = "Fin du jour " + (this.Jour);
+
+						fenetreInteraction = game.add.sprite(game.width/2,game.camera.y+game.height/2-100,"fenetre");
+						fenetreInteraction.scale.setTo(0.85);
+						fenetreInteraction.anchor.setTo(0.5);
+						fenetreInteraction.fixedToCamera = true;
+
+
+						var t = fenetreInteraction.addChild(game.make.text(-game.camera.x, 0, text, style));
+						t.anchor.setTo(0.5,0.5);
+						t.fixedToCamera = true;
+
 					if(this.Jour <= 2){
+					game.time.events.add(Phaser.Timer.SECOND * 4, ()=>{
 						game.state.start(game.state.current);
+					}, this);
 					}else{
+					game.time.events.add(Phaser.Timer.SECOND * 4, ()=>{
 						game.state.add("end", end);
-            			game.state.start('end');
+						game.state.start('end');
+					}, this);
 					}
 				}
 				else{

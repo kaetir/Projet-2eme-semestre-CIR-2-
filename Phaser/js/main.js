@@ -8,12 +8,13 @@ function getRandomInt(max) {
 
 
 
-var game = new Phaser.Game(1152, 648, Phaser.AUTO, '', { 
+var game = new Phaser.Game(1152, 648, Phaser.AUTO, 'Trust Me', { 
     boot : boot,
     preload: preload, 
     create: create, 
     menu : main_menu,
-});
+}, true, true);
+
 
 game.Game = new JEU();
 

@@ -39,7 +39,8 @@ var main_menu = {
 		startingButton.scale.setTo(0.5,0.5);
 		startingButton.anchor.setTo(0.5,-0.5);
 
-		startingButton.setFrames(17,15,16);
+		startingButton.setFrames(20,18,19);
+		startingButton.smoothed = true;
 
 
 

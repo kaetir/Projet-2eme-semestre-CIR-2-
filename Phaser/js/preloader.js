@@ -1,6 +1,13 @@
 function boot(){
+
+	Phaser.Canvas.setImageRenderingCrisp(game.canvas);  //for Canvas, modern 
+	approachPhaser.Canvas.setSmoothingEnabled(game.context, false);  //also for Canvas, legacy 
+	approachPIXI.scaleModes.DEFAULT = PIXI.scaleModes.NEAREST; //for WebGL
+
 	
 }
+
+
 function preload () {
 
 	game.load.image('background', 'assets/background/background_accueil.png', 'assets/sprite_sheet/json/manipulateur_sprite.json', Phaser.Loader.TEXTURE_ATLAS_JSON_HASH);
@@ -73,6 +80,8 @@ function load() {
 	game.load.image("CV_Gaffeur", "assets/CVS/CV_GAFFEUR.PNG");
 	game.load.image("CV_Manipulateur", "assets/CVS/CV_MANIPULATEUR.PNG");
 	game.load.image("CV_Susceptible" , "assets/CVS/CV_SUSCEPTIBLE.PNG");
+	game.load.image("aquarium", "assets/aquarium.png");
+	game.load.image("porte", "assets/porte.png");
 	
 
 	game.load.atlas('boutons', 'assets/sprite_sheet/boutons_sprite.png', 'assets/sprite_sheet/json/boutons_sprite.json', Phaser.Loader.TEXTURE_ATLAS_JSON_HASH);
