@@ -19,7 +19,7 @@ var game = new Phaser.Game(1152, 648, Phaser.AUTO, 'Trust Me', {
 game.Game = new JEU();
 
 game.Game.addJoueur("Billy","Bosseur");
-game.Game.addJoueur("Jeanne","Suceptible");
+game.Game.addJoueur("Jeanne","Susceptible");
 game.Game.addJoueur("Teemo","Gaffeur");
 game.Game.addJoueur("Ed","Manipulateur");
 game.Game.addJoueur("You","Humain");

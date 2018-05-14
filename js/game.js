@@ -1,6 +1,6 @@
 
 var style = { font: "65px Arial", fill: "#1394a2ff", align: "center" };
-var styleR = { font: "65px Arial", fill: "# e54a3bff", align: "center" };
+var styleR = { font: "65px Arial", fill: "#e54a3bff", align: "center" };
 
 var leJeu = {
 	isArcade : true,
@@ -18,6 +18,7 @@ var leJeu = {
 	Game : new JEU(),
 
 	create : function(){
+		// console.log(game.Game.tabJoueur);
 		this.ELLESUCE = false;
 
 		var Betray_1 = game.add.audio('Betray_1');
@@ -103,6 +104,8 @@ var leJeu = {
 				body.sprite.animations.stop("jump");
 				if(!this.sELLESUCE){
 				//remplacer le texte si dessous par un text de demande coop
+				// console.log(body.joueur.type);
+				// console.log(tabDialog.filter(elemt => elemt.perso == body.joueur.type));
 				var diag = tabDialog.filter(elemt => elemt.perso == body.joueur.type)[0].phrases[getRandomInt(0,2)]
 				var text = diag.phrase;
 
@@ -142,11 +145,9 @@ var leJeu = {
 						this.ELLESUCE = false;
 					}, this);
 
-
-
-					// }else{
-						
-					// }
+					if(game.Game.tabJoueur[4] == undefined){
+						game.Game.addJoueur("You","Humain");
+					}
 					game.Game.tabJoueur[4].trade(true,body.joueur,game.Game);
 
 
@@ -160,7 +161,7 @@ var leJeu = {
 				var betray = fenetreInteraction.addChild(game.make.button(0,0,"boutons" , ()=>{
 					fenetreInteraction.destroy();
 
-					this.ELLESUCE = false;
+
 					cooperate = false;
 					if(getRandomInt(2) == 1)
 						Betray_1.play();
@@ -185,6 +186,10 @@ var leJeu = {
 						this.ELLESUCE = false;
 					}, this);
 
+
+					if(game.Game.tabJoueur[4] == undefined){
+						game.Game.addJoueur("You","Humain");
+					}
 					game.Game.tabJoueur[4].trade(false,body.joueur,game.Game);
 
 

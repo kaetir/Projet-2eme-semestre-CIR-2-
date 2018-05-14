@@ -20,7 +20,7 @@ var end = {
 		var score = "Score : " + result + "\n Bravo \n La confiance c'est très important";
 
 		if(result >= 10 )
-			score += "\n vous un etes bosseur ";
+			score += "\n vous etes un bosseur ";
 
 		if(result <= 6 && result > 10 )
 			score += "\n vous etes un manipulateur ";
