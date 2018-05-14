@@ -106,7 +106,7 @@ var leJeu = {
 				//remplacer le texte si dessous par un text de demande coop
 				// console.log(body.joueur.type);
 				// console.log(tabDialog.filter(elemt => elemt.perso == body.joueur.type));
-				var diag = tabDialog.filter(elemt => elemt.perso == body.joueur.type)[0].phrases[getRandomInt(0,2)]
+				var diag = tabDialog.filter(elemt => elemt.perso == body.joueur.type)[0].phrases[getRandomInt(2)]
 				var text = diag.phrase;
 
 				fenetreInteraction = game.add.sprite(game.width/2,game.camera.y+game.height/2-100,"fenetre");
