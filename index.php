@@ -16,6 +16,7 @@ include 'fonction.php'
  		text-decoration: none;
  	}
 </style>
+<style type="text/css" src="syle.css"></style>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#ffffff">
 
@@ -24,9 +25,12 @@ include 'fonction.php'
 </head> 
 <body>
 	<div class="w3-container w3-margin-top " >
+		<div class="w3-container w3-card">
 		<?php 
 		include "README.html";
 		?>
+		</div>
+
 	</div>
 	<div class="w3-container w3-margin-top " >
 		<ul class="w3-container w3-ul w3-card">

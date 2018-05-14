@@ -45,6 +45,7 @@ function load() {
 
 	game.load.image("logo", "assets/logo/trustMe_logo_app.png");
 	
+	// sons
 	game.load.audio('boden', ['assets/sound/Ambiance_1.ogg']);
 	game.load.audio('Betray_1',['assets/sound/Betray_1.ogg']);
 	game.load.audio('Betray_2',['assets/sound/Betray_2.ogg']);
@@ -52,6 +53,7 @@ function load() {
 	game.load.audio('Coop_2',['assets/sound/Coop_2.ogg']);
 
 
+	//sprite sheet
 	game.load.atlas('gaffeur', 'assets/sprite_sheet/gaffeur_sprite.png', 'assets/sprite_sheet/json/gaffeur_sprite.json', Phaser.Loader.TEXTURE_ATLAS_JSON_HASH);
 	game.load.atlas('bosseur', 'assets/sprite_sheet/bosseur_sprite.png', 'assets/sprite_sheet/json/bosseur_sprite.json', Phaser.Loader.TEXTURE_ATLAS_JSON_HASH);
 	game.load.atlas('susceptible', 'assets/sprite_sheet/susceptible_sprite.png', 'assets/sprite_sheet/json/susceptible_sprite.json', Phaser.Loader.TEXTURE_ATLAS_JSON_HASH);
@@ -59,10 +61,18 @@ function load() {
 	game.load.atlas('mec', 'assets/sprite_sheet/mec_sprite.png', 'assets/sprite_sheet/json/mec_sprite.json', Phaser.Loader.TEXTURE_ATLAS_JSON_HASH);
 	game.load.atlas('meuf', 'assets/sprite_sheet/meuf_sprite.png', 'assets/sprite_sheet/json/meuf_sprite.json', Phaser.Loader.TEXTURE_ATLAS_JSON_HASH);
 	
+	//images
 	game.load.image("table", "assets/table.png");
 	game.load.image("fenetre", "assets/rencontre.png");
+	game.load.image("fleche_droite", "assets/fleche_droite.png");
+	game.load.image("fleche_gauche", "assets/fleche_gauche.png");
 	game.load.image("sol", "assets/background/sol_32x32.png");
+	game.load.image("CV_Bosseur", "assets/CVS/CV_BOSSEUR.PNG");
+	game.load.image("CV_Gaffeur", "assets/CVS/CV_GAFFEUR.PNG");
+	game.load.image("CV_Manipulateur", "assets/CVS/CV_MANIPULATEUR.PNG");
+	game.load.image("CV_Susceptible" , "assets/CVS/CV_SUSCEPTIBLE.PNG");
 	
+
 	game.load.atlas('boutons', 'assets/sprite_sheet/boutons_sprite.png', 'assets/sprite_sheet/json/boutons_sprite.json', Phaser.Loader.TEXTURE_ATLAS_JSON_HASH);
 	
 	
