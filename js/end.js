@@ -20,16 +20,16 @@ var end = {
 		var score = "Score : " + result + "\n Bravo \n La confiance c'est très important";
 
 		if(result >= 10 )
-			var score += "\n vous un etes bosseur ";
+			score += "\n vous un etes bosseur ";
 
 		if(result <= 6 && result > 10 )
-			var score += "\n vous etes un manipulateur ";
+			score += "\n vous etes un manipulateur ";
 
 		if(result <= 3 && result > 6 )
-			var score += "\n vous etes un gaffeur ";
+			score += "\n vous etes un gaffeur ";
 
 		if(result < 3 )
-			var score += "\n vous un etes susceptible ";
+			score += "\n vous un etes susceptible ";
 		
 
 		text = game.add.text(game.world.centerX/2, game.world.centerY-50, score, { font: "bold 32px Arial", fill: "#e54a3b", align : "center" });

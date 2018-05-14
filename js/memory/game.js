@@ -88,4 +88,4 @@ class JEU {
 		}
 
 	} 
-	JEU.prototype.liste_type = ["Manipulateur", "Suceptible","Bosseur", "Gaffeur", "Humain"];
+	JEU.prototype.liste_type = ["Manipulateur", "Susceptible","Bosseur", "Gaffeur", "Humain"];

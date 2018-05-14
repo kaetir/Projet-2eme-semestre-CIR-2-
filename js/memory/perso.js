@@ -8,7 +8,7 @@ class Personnage {
 				this.human = true;
 			}
 
-			if(type == "Suceptible"){
+			if(type == "Susceptible"){
 
 				this.TRIGERED = [];/*Tableau récapitulatif des persos qui ont l'on BETRAY*/
 
@@ -30,7 +30,7 @@ class Personnage {
 		}
 		
 		present(){
-			if(this.type != "Suceptible"){
+			if(this.type != "Susceptible"){
 				console.log('Bonjour je suis '+ this.nom + " id:"+this.id)        
 			}else{
 				console.log('Bonjour je suis '+ this.nom + " id:"+this.id + " trigger :" + this.TRIGERED)        
@@ -62,11 +62,11 @@ class Personnage {
 				var recu = perso.donne_for_trade(this,game);
 				this.memoire.push(new coup(donnee,recu,perso.id, game.tour));
 				perso.memoire.push(new coup(recu,donnee,this.id, game.tour))
-				if(this.type == "Suceptible" && recu == false ){
+				if(this.type == "Susceptible" && recu == false ){
 					if(!this.TRIGERED.includes(perso.id))
 						this.I_AM_TRIGERED(perso);
 				}
-				if(perso.type == "Suceptible" && donnee == false ){
+				if(perso.type == "Susceptible" && donnee == false ){
 					if(!perso.TRIGERED.includes(this.id))
 						perso.I_AM_TRIGERED(this);
 				}
@@ -118,7 +118,7 @@ class Personnage {
 
 				break;
 			}
-			case "Suceptible":{
+			case "Susceptible":{
 				/*Liste d'échanges: COOP >> ADAPTATION >> ADAPTATION*/
 
 				/*Premier échange de l'individu.*/

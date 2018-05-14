@@ -1,5 +1,6 @@
 
 var style = { font: "65px Arial", fill: "#1394a2ff", align: "center" };
+var styleR = { font: "65px Arial", fill: "# e54a3bff", align: "center" };
 
 var leJeu = {
 	isArcade : true,
@@ -102,8 +103,8 @@ var leJeu = {
 				body.sprite.animations.stop("jump");
 				if(!this.sELLESUCE){
 				//remplacer le texte si dessous par un text de demande coop
-				console.log()
-				var text = tabDia[getRandomInt(0,tabDia.length)];
+				var diag = tabDialog.filter(elemt => elemt.perso == body.joueur.type)[0].phrases[getRandomInt(0,2)]
+				var text = diag.phrase;
 
 				fenetreInteraction = game.add.sprite(game.width/2,game.camera.y+game.height/2-100,"fenetre");
 				fenetreInteraction.scale.setTo(0.85);
@@ -117,7 +118,6 @@ var leJeu = {
 
 				var coop = fenetreInteraction.addChild(game.make.button(0,0,"boutons" , ()=>{
 					fenetreInteraction.destroy();
-					this.ELLESUCE = false;
 					cooperate = true;
 					if(getRandomInt(2) == 1)
 						Coop_1.play();
@@ -125,6 +125,24 @@ var leJeu = {
 						Coop_2.play();
 
 					// if(body.joueur.donneForTrade(game.Game.tabJoueur[4])){
+					var text = diag.coop;
+
+					fenetreInteraction = game.add.sprite(game.width/2,game.camera.y+game.height/2-100,"fenetre");
+					fenetreInteraction.scale.setTo(0.85);
+					fenetreInteraction.anchor.setTo(0.5);
+					fenetreInteraction.fixedToCamera = true;
+	
+	
+					var t = fenetreInteraction.addChild(game.make.text(-game.camera.x, 0, text, style));
+					t.anchor.setTo(0.5,1.8);
+					t.fixedToCamera = true;
+
+					game.time.events.add(Phaser.Timer.SECOND * 2, ()=>{
+						fenetreInteraction.destroy();
+						this.ELLESUCE = false;
+					}, this);
+
+
 
 					// }else{
 						
@@ -148,6 +166,24 @@ var leJeu = {
 						Betray_1.play();
 					else
 						Betray_2.play();
+
+
+					var text = diag.betray;
+
+					fenetreInteraction = game.add.sprite(game.width/2,game.camera.y+game.height/2-100,"fenetre");
+					fenetreInteraction.scale.setTo(0.85);
+					fenetreInteraction.anchor.setTo(0.5);
+					fenetreInteraction.fixedToCamera = true;
+	
+	
+					var t = fenetreInteraction.addChild(game.make.text(-game.camera.x, 0, text, styleR));
+					t.anchor.setTo(0.5,1.8);
+					t.fixedToCamera = true;
+
+					game.time.events.add(Phaser.Timer.SECOND * 2, ()=>{
+						fenetreInteraction.destroy();
+						this.ELLESUCE = false;
+					}, this);
 
 					game.Game.tabJoueur[4].trade(false,body.joueur,game.Game);
 
