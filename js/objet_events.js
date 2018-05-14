@@ -1,7 +1,7 @@
 var tabDialog =
 [
 {perso : "Bosseur", situation : "coop", phrases :
-[{phrase : "Bonjour, est-ce que tu peux\n m’aider concernant notre projet ? ", coop : "Grâce au travail d’équipe le projet avance bien !",
+[{phrase : "Bonjour, est-ce que tu peux\n m’aider concernant notre projet ? ", coop : "Grâce au travail d’équipe le projet \navance bien !",
 	betray : "Le Bosseur travaille seul et a \nplus de mal à rendre son dossier à temps, \ncela entache tout le projet."},
 {phrase : "Est-ce que tu peux aller me chercher\n un café à la machine, je travaille \nd’arrache-pied.", coop : "Votre gentillesse est récompensée \npar une recommandation a votre supérieur, \nl’ambiance s’améliore.",
 	betray : "Le Bosseur est accro au café, sans \ncafé il fait du sur-place, \nle projet en pâtit."},
