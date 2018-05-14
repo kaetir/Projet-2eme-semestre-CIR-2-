@@ -21,6 +21,10 @@ var end = {
 		text = game.add.text(game.world.centerX/2, game.world.centerY-50, score, { font: "bold 32px Arial", fill: "#e54a3b", align : "center" });
     	text.anchor.set(0.5,0.5);
 
+    	game.time.events.add(Phaser.Timer.SECOND * 10, ()=>{
+			game.state.start('boot');
+		}, this);
+
 	},
 
 	update : function(){

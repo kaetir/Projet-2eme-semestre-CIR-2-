@@ -124,11 +124,11 @@ var leJeu = {
 					else
 						Coop_2.play();
 
-					if(body.joueur.donneForTrade(game.Game.tabJoueur[4])){
-
-					}else{
+					// if(body.joueur.donneForTrade(game.Game.tabJoueur[4])){
 						
-					}
+					// }else{
+						
+					// }
 					game.Game.tabJoueur[4].trade(true,body.joueur,game.Game);
 
 
