@@ -1,6 +1,5 @@
 
 var style = { font: "65px Arial", fill: "#1394a2ff", align: "center" };
-var styleR = { font: "65px Arial", fill: "#e54a3bff", align: "center" };
 
 var leJeu = {
 	isArcade : true,
@@ -103,7 +102,8 @@ var leJeu = {
 				body.sprite.animations.stop("jump");
 				if(!this.sELLESUCE){
 				//remplacer le texte si dessous par un text de demande coop
-				var text = tabDialog.filter(elemt => elemt.perso == body.joueur.type)[0].phrases[getRandomInt(0,2)].phrase;
+				console.log()
+				var text = tabDia[getRandomInt(0,tabDia.length)];
 
 				fenetreInteraction = game.add.sprite(game.width/2,game.camera.y+game.height/2-100,"fenetre");
 				fenetreInteraction.scale.setTo(0.85);
@@ -117,33 +117,19 @@ var leJeu = {
 
 				var coop = fenetreInteraction.addChild(game.make.button(0,0,"boutons" , ()=>{
 					fenetreInteraction.destroy();
-					
+					this.ELLESUCE = false;
 					cooperate = true;
-					if(getRandomInt(1,2) == 1)
+					if(getRandomInt(2) == 1)
 						Coop_1.play();
 					else
 						Coop_2.play();
 
-					var text = "merci";
+					// if(body.joueur.donneForTrade(game.Game.tabJoueur[4])){
 
-					fenetreInteraction = game.add.sprite(game.width/2,game.camera.y+game.height/2-100,"fenetre");
-					fenetreInteraction.scale.setTo(0.85);
-					fenetreInteraction.anchor.setTo(0.5);
-					fenetreInteraction.fixedToCamera = true;
-	
-	
-					var t = fenetreInteraction.addChild(game.make.text(-game.camera.x, 0, text, style));
-					t.anchor.setTo(0.5,1.8);
-					t.fixedToCamera = true;
-
-					game.time.events.add(Phaser.Timer.SECOND * 2, ()=>{
-						fenetreInteraction.destroy();
-						this.ELLESUCE = false;
-					}, this);
-
-
+					// }else{
+						
+					// }
 					game.Game.tabJoueur[4].trade(true,body.joueur,game.Game);
-
 
 
 				}, this));
@@ -156,31 +142,12 @@ var leJeu = {
 				var betray = fenetreInteraction.addChild(game.make.button(0,0,"boutons" , ()=>{
 					fenetreInteraction.destroy();
 
+					this.ELLESUCE = false;
 					cooperate = false;
 					if(getRandomInt(2) == 1)
 						Betray_1.play();
 					else
 						Betray_2.play();
-
-
-					var text = "c'est pas très très gentil :'(";
-
-					fenetreInteraction = game.add.sprite(game.width/2,game.camera.y+game.height/2-100,"fenetre");
-					fenetreInteraction.scale.setTo(0.85);
-					fenetreInteraction.anchor.setTo(0.5);
-					fenetreInteraction.fixedToCamera = true;
-	
-	
-					var t = fenetreInteraction.addChild(game.make.text(-game.camera.x, 0, text, styleR));
-					t.anchor.setTo(0.5,1.8);
-					t.fixedToCamera = true;
-
-					game.time.events.add(Phaser.Timer.SECOND * 2, ()=>{
-						fenetreInteraction.destroy();
-						this.ELLESUCE = false;
-					}, this);
-
-
 
 					game.Game.tabJoueur[4].trade(false,body.joueur,game.Game);
 
@@ -192,7 +159,7 @@ var leJeu = {
 				betray.anchor.setTo(0.5,-1);
 
 				this.ELLESUCE = true;
-				
+
 
 			}
 		}
