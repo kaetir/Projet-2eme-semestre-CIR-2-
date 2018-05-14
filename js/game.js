@@ -125,7 +125,7 @@ var leJeu = {
 						Coop_2.play();
 
 					// if(body.joueur.donneForTrade(game.Game.tabJoueur[4])){
-						
+
 					// }else{
 						
 					// }
@@ -178,7 +178,7 @@ var leJeu = {
 update : function() {
 	Ed.angle += 1;
 	Femelle.body.setZeroVelocity();
-		var speed = 300; //mettre a 300 hors test
+		var speed = 450; //mettre a 300 hors test
 		if(!this.ELLESUCE){
 			
 			if (cursors.up.isDown)

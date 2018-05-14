@@ -17,7 +17,7 @@ var main_menu = {
 		*/
 		function gofull() {
 			if (game.scale.isFullScreen){
-				game.scale.stopFullScreen();
+				// game.scale.stopFullScreen();
 			}
 			else{
 				game.scale.startFullScreen(false);
@@ -167,6 +167,7 @@ var main_menu = {
 			arcade.destroy();
 
 			leJeu.isArcade = 0;
+			// game.state.add("end", end);
 			game.state.add("game", leJeu);
 			game.state.start('game');
 		};
