@@ -16,7 +16,21 @@ var end = {
 			console.log(i.id);
 		}
 
-		var score = "Score : " + game.Game.scorePerso(game.Game.tabJoueur[4]) + "\n Bravo \n La confiance c'est très important";
+		var result = game.Game.scorePerso(game.Game.tabJoueur[4]);
+		var score = "Score : " + result + "\n Bravo \n La confiance c'est très important";
+
+		if(result >= 10 )
+			var score += "\n vous un etes bosseur ";
+
+		if(result <= 6 && result > 10 )
+			var score += "\n vous etes un manipulateur ";
+
+		if(result <= 3 && result > 6 )
+			var score += "\n vous etes un gaffeur ";
+
+		if(result < 3 )
+			var score += "\n vous un etes susceptible ";
+		
 
 		text = game.add.text(game.world.centerX/2, game.world.centerY-50, score, { font: "bold 32px Arial", fill: "#e54a3b", align : "center" });
     	text.anchor.set(0.5,0.5);
